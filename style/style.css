@@ -1,0 +1,20 @@
+@import url(navbar/navbar.css);
+@import url(button/button.css);
+::-webkit-scrollbar {
+    width: 5px;
+    background-color: rgb(17, 197, 252);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: white;
+}
+
+::-webkit-scrollbar-button {
+    height: 80px;
+    border-radius: 5px;
+}
+
+::placeholder {
+    font-size: 14px;
+}

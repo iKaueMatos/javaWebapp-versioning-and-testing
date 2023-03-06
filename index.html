@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Icon-->
+    <link rel="shortcut icon" href="assents/informacoes.png" type="image/x-icon">
+    <title>Aps - Java</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style/style.css" />
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm lg p-2 " style="background-color: rgb(17, 197, 252)">
+        <div class="container ">
+            <a href="#" class="nav-link nav-brand text-light" style="font-size: 20px; font-weight: bold;"> CRUD </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link text-light" href="#">Tema</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light " href=#>Tema</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link text-light " href="# ">CRUD</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--Formulario container -->
+    <div class="container formulario mt-5 p-5 col-xl-4 " style="background-color: rgb(17, 197, 252); border-radius: 12px; ">
+        <style>
+            /* Responsividade Formulario*/
+            
+            @media(max-width:1024px) {
+                .formulario {
+                    width: 600px;
+                }
+            }
+            
+            @media(max-width:768px) {
+                .formulario {
+                    width: 550px;
+                }
+            }
+            
+            @media(max-width:586px) {
+                .formulario {
+                    width: 500px;
+                    height: 500px;
+                }
+            }
+            
+            @media(max-width:496px) {
+                .formulario {
+                    width: 380px;
+                    height: 500px;
+                }
+            }
+        </style>
+        <!--Formulario-->
+
+        <div class="row ">
+            <div class="text-center m-3 ">
+                <h2 class="text-light" style="font-weight: bold;" style="font-size: 12px;">Adicione seus dados</h1>
+            </div>
+            <div class="col-12 col-sm-12 ">
+                <div class="row ">
+                    <form class="g-4 ">
+                        <div class=" col mb-2 ">
+                            <label for="formControltextInput " class="form-label text-light" style="font-size: 18px; font-weight: 700; ">Texto</label>
+                            <input type="text " class="form-control p-1 " placeholder="Digite seu texto " style="height: 50px; border:0px; " />
+                        </div>
+                </div>
+                <div class="row ">
+                    <div class="col mb-2 ">
+                        <label for="formControltextInput " class="form-label text-light" style="font-size: 18px; font-weight: 700; ">Texto</label>
+                        <input type="text " class="form-control p-1 " placeholder="Digite seu texto " style="height: 50px; border: 0px; " />
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class=" col mb-2 ">
+                        <label for="formControltextInput " class="form-label text-light" style="font-size: 18px; font-weight: 700; ">Texto</label>
+                        <input type="text " class="form-control p-1 " placeholder="Digite seu texto " style="height:50px; border:0px " />
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col button-move d-flex justify-content-center">
+                        <button type="button" class="btn btn-light text-dark button">Enviar</button>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <hr style="border: 1px solid #000; width: 90px; ">
+
+    <!--Conteudo-->
+    <div class="container">
+        <div class="row m-0 p-0">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-6 p-4">
+                <img src="assents/sem-foto.jpg" alt="sem foto" title=" sem foto" class="img-fluid m-2 image">
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-6 p-5 mt-5">
+                <h2 class="display-6">Titulo</h2>
+                <hr class="hr-titulo" style="width: 90px;">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit tempora excepturi itaque, molestiae voluptate voluptas ducimus. Quae doloribus laudantium ratione eaque rerum dolore architecto perferendis at quo eum. Nostrum, quaerat! Lorem
+                    ipsum dolor sit amet consectetur adipisicing elit. Quis, minima tenetur ex sint error vero, fugiat ut numquam voluptate impedit repellendus quam quod, dolore mollitia architecto voluptates possimus quos veniam!</p>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <!--Responsiva image-->
+    <style>
+        @media(max-width:2560px) {
+            .image {
+                width: 550px;
+                width: 550px;
+            }
+        }
+        
+        @media(max-width:510px) {
+            .image {
+                width: 500px;
+                height: 500px;
+            }
+        }
+        
+        @media (max-width:410px) {
+            .image {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 10px;
+                width: 400px;
+                height: 350px;
+            }
+        }
+    </style>
+
+    <div class="container">
+        <div class="row m-0 p-0">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-6 p-5 mt-5">
+                <h2 class="display-6">Titulo</h2>
+                <hr class="hr-titulo" style="width: 90px;">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit tempora excepturi itaque, molestiae voluptate voluptas ducimus. Quae doloribus laudantium ratione eaque rerum dolore architecto perferendis at quo eum. Nostrum, quaerat! Lorem
+                    ipsum dolor sit amet consectetur adipisicing elit. Quis, minima tenetur ex sint error vero, fugiat ut numquam voluptate impedit repellendus quam quod, dolore mollitia architecto voluptates possimus quos veniam!</p>
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-6 p-4">
+                <img src="assents/sem-foto.jpg" alt="sem foto" title=" sem foto" class="img-fluid m-2 image">
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <script src="js/script.js "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js " integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js " integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3 " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js " integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD " crossorigin="anonymous "></script>
+</body>
+
+</html>
