@@ -1,8 +1,6 @@
 ## Documentos para instalção das dependencias necessarias para execução do projeto
 
-*Este artigo foi traduzido do [Inglês](README.md) e traduzido para [Chinês](README-zh.md),
-[Português](README-pt-BR.md), [Espanhol](README-es-ES.md), [Alemão](README-de-DE.md)
-e [Francês](README-fr.md).*
+-----------------------------------------------------------------------------------------------------------------
 
 ## Node.JS
 
