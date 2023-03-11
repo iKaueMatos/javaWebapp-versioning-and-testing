@@ -22,15 +22,16 @@ usando HTML, CSS e JavaScript, baseado em modelos de design para a tipografia, m
 
 Codigo para executar no terminal do workspace:
 
-´´´
+
+```
 npm i bootstrap@5.3.0-alpha1
-´´´
+```
 
 Biblioteca bootstrap icones:
 
-´´´
+```
 npm i bootstrap-icons
-´´´
+```
 
 ## Sass pre pocessador do Css:
 
@@ -48,9 +49,9 @@ Todos os comandos escritos rodados apos a instalação do **Node.js** na sua maq
  
 Comando Node.js:
 
-´´´
+```
 npm init
-´´´
+```
 
 
 
