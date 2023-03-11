@@ -1,4 +1,4 @@
-## Ferramentas necessarias para instalção das dependencias e para execução do projeto
+## Ferramentas necessarias para instalção das dependencias e para execução do projeto☕
 
 
 
@@ -39,5 +39,7 @@ Extensão para compilar os arquivos:Live Sass copiler
 Link:https://marketplace.visualstudio.com/items?itemName=ritwickdey.live-sass
 
 
+## Lembrando☕
 
+Todos os comandos escritos rodados apos a instalação do **Node.js** na sua maquina,e também o compilador do **Live sass copiler** lembre-se de rodar todos esses comando no terminal do visual studio executando o **Node.js** para inicializar o terminal do **Node.js** basta digitar **npm init** e logo em seguida executar todos os comando acima 📘.  
  
