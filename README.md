@@ -1,4 +1,4 @@
-#Documentos para instalção das dependencias necessarias para execução do projeto
+## Documentos para instalção das dependencias necessarias para execução do projeto
 
 *Este artigo foi traduzido do [Inglês](README.md) e traduzido para [Chinês](README-zh.md),
 [Português](README-pt-BR.md), [Espanhol](README-es-ES.md), [Alemão](README-de-DE.md)
@@ -13,7 +13,7 @@ e que permite a execução de códigos JavaScript fora de um navegador web. A pr
 Link para instalção windows 64bits:https://nodejs.org/pt-br/download/
 
 
-#Bootstrap V.5.3.0 
+## Bootstrap V.5.3.0 
 
 Bootstrap é um framework web com código-fonte aberto para desenvolvimento de componentes de interface e front-end para sites e aplicações web,
 usando HTML, CSS e JavaScript, baseado em modelos de design para a tipografia, melhorando a experiência do usuário em um site amigável e responsivo.
@@ -27,7 +27,7 @@ Biblioteca bootstrap icones:
 
 npm i bootstrap-icons
 
-#Sass pre pocessador do Css:
+## Sass pre pocessador do Css:
 
 Sass é uma linguagem de folhas de estilo concebida inicialmente por Hampton Catlin e desenvolvida por Natalie Weizenbaum. Depois de suas 
 versões iniciais, Weizenbaum e Chris Eppstein continuaram a estender Sass com SassScript, uma simples linguagem de script usada em arquivos Sass.
