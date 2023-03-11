@@ -1,0 +1,52 @@
+ .formulario {
+     border-radius: 12px;
+     height: 500px;
+     background-color: $cyan !important;
+ }
+ 
+ @media(max-width:400px) {
+     .formulario {
+         width: 350px;
+     }
+     .form-control {
+         width: 260px;
+     }
+     .image {
+         overflow: hidden;
+     }
+     //Responsividade
+     @media(max-width:320px) {
+         .formulario {
+             width: 300px;
+             margin: 10px;
+             display: flex;
+             justify-content: center;
+             align-items: center;
+         }
+         .form {
+             margin: 10px;
+         }
+         .form-control {
+             width: 270px;
+             margin: 5px;
+             padding: 10px;
+             display: flex;
+         }
+     }
+ }
+ 
+ .button-move {
+     margin-top: 30px;
+ }
+ 
+ .button {
+     width: 150px;
+     height: 40px;
+     font-weight: bold;
+     &:hover .button {
+         background-color: rgb(255, 255, 255);
+     }
+     &:active.button {
+         transform: scale(0.97);
+     }
+ }

@@ -1,0 +1,11 @@
+.navbar {
+    border-radius: 5px;
+    background-color: $cyan !important;
+    .nav-link {
+        font-weight: bold;
+        font-size: 21px;
+        &:hover .nav-link {
+            cursor: pointer;
+        }
+    }
+}
