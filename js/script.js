@@ -22,3 +22,24 @@ if (target.length) {
 
 
 //Efeito maquina de escrever!
+
+
+function toWrite(elemento) {
+    const textoArray = elemento.innerHTML.split('');
+
+    elemento.innerHTML = '';
+    textoArray.forEach((letra, i) => {
+        setTimeout(() => {
+            elemento.innerHTML += letra;
+        }, 75 * i); // 75 milisegundos
+    });
+}
+
+const title = document.querySelector('.title');
+const paragraph = document.querySelector('.paragraph');
+const paragraph2 = document.querySelector('.paragraph2');
+const title2 = document.querySelector('.title2');
+toWrite(title);
+toWrite(paragraph);
+toWrite(paragraph2);
+toWrite(title2);

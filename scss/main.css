@@ -11814,6 +11814,28 @@ footer strong .text-email {
   transform: translate3d(0px, 0px, 0px);
 }
 
+h2::after, .h2::after {
+  content: "|";
+  margin-left: 5px;
+  opacity: 1;
+  animation: pisca 0.15s infinite;
+}
+
+@keyframes pisca {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+p .paragraph::after {
+  content: "|";
+  margin-left: 5px;
+  opacity: 1;
+  animation: pisca 0.7s infinite;
+}
+
 ::-webkit-scrollbar {
   width: 5px;
   background-color: rgb(17, 197, 252);
