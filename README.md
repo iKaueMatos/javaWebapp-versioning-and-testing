@@ -22,12 +22,15 @@ usando HTML, CSS e JavaScript, baseado em modelos de design para a tipografia, m
 
 Codigo para executar no terminal do workspace:
 
+...
 npm i bootstrap@5.3.0-alpha1
-
+...
 
 Biblioteca bootstrap icones:
 
+...
 npm i bootstrap-icons
+...
 
 ## Sass pre pocessador do Css:
 
@@ -43,3 +46,12 @@ Link:https://marketplace.visualstudio.com/items?itemName=ritwickdey.live-sass
 
 Todos os comandos escritos rodados apos a instalação do **Node.js** na sua maquina,e também o compilador do **Live sass copiler** lembre-se de rodar todos esses comando no terminal do visual studio executando o **Node.js** para inicializar o terminal do **Node.js** basta digitar **npm init** e logo em seguida executar todos os comando acima 📘.  
  
+Comando Node.js:
+
+...
+npm init
+...
+
+
+
+
