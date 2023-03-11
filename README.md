@@ -1,6 +1,10 @@
-## Documentos para instalção das dependencias necessarias para execução do projeto
+## Ferramentas necessarias para instalção das dependencias e para execução do projeto
 
------------------------------------------------------------------------------------------------------------------
+
+
+
+
+----------------
 
 ## Node.JS
 
