@@ -1,3 +1,4 @@
+@import '../../node_modules/bootstrap/scss/variables';
 //Animação
 [data-anime] {
     opacity: 0;
@@ -17,7 +18,7 @@
     transform: translate3d(0px, 0px, 0px);
 }
 
-// Animação efeito de maquina digitando
+// Animação efeito de máquina digitando
 h2::after {
     content: '|';
     margin-left: 5px;
@@ -39,6 +40,52 @@ p {
         content: '|';
         margin-left: 5px;
         opacity: 1;
-        animation: pisca .7s infinite;
+        animation: pisca .3s infinite;
     }
+}
+
+.card {
+    background: $black !important;
+    border-radius: 11px;
+    img {
+        border-radius: 15px;
+    }
+}
+
+@media(max-width:2560px) {
+    .card {
+        background: $black !important;
+        border-radius: 11px;
+        width: 296px;
+    }
+    img {
+        border-radius: 15px;
+        width: 294px;
+    }
+    .igor {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 292px;
+    }
+}
+
+@media(max-width:320px) {
+    .card {
+        width: 260px;
+        height: 520px;
+        .btn-danger {
+            margin-top: 2px;
+        }
+        img {
+            width: 213px;
+            height: 213px;
+        }
+    }
+}
+
+hr {
+    color: $black !important;
+    height: 2px;
+    background-color: $black !important;
 }

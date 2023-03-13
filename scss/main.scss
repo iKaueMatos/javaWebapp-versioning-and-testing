@@ -5,12 +5,12 @@
 @import '../scss/pages/conteudo.scss';
 ::-webkit-scrollbar {
     width: 5px;
-    background-color: rgb(17, 197, 252);
+    background-color: $yellow !important;
     border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: white;
+    background-color: $white !important;
 }
 
 ::-webkit-scrollbar-button {
@@ -19,5 +19,6 @@
 }
 
 ::placeholder {
-    font-size: 14px;
+    font-size: 15px;
+    margin-right: 1px;
 }

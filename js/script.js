@@ -31,7 +31,7 @@ function toWrite(elemento) {
     textoArray.forEach((letra, i) => {
         setTimeout(() => {
             elemento.innerHTML += letra;
-        }, 75 * i); // 75 milisegundos
+        }, 85 * i); // 75 milisegundos
     });
 }
 
