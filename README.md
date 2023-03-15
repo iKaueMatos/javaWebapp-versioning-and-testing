@@ -62,5 +62,5 @@ Referencia:https://www.tecmundo.com.br/software/223924-mysql-usar-o-sistema.htm
 *Linguagem SQL
 
 
-Conteudos que serão utilizados para desenvolvimento:https://www.youtube.com/playlist?list=PLdvD02W3316Ix5xrHWVNyhjchB8YE_hk4
+Contéudos que serão utilizados para desenvolvimento:https://www.youtube.com/playlist?list=PLdvD02W3316Ix5xrHWVNyhjchB8YE_hk4
 
