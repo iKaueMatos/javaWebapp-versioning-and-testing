@@ -39,5 +39,10 @@ Link para intalação site oficial:https://www.eclipse.org/ide/
 *Requisição para banco de dados 
 *Java EE
 * try e catch 
+*Arquitetura MVC -> Model,Controller,View
+*Mysql OU SQLITE-> SGBD
+*Linguagem SQL
 
+
+Conteudos que serão utilizados para desenvolvimento:https://www.youtube.com/playlist?list=PLdvD02W3316Ix5xrHWVNyhjchB8YE_hk4
 
