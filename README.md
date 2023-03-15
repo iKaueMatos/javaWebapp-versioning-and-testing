@@ -12,7 +12,7 @@ Placa de video:não obrigatoria
 
 ## Visual Studio code
 
-O que é ?
+## O que é ?
 
 O Visual Studio Code (VS Code) é um editor de código de código aberto desenvolvido pela Microsoft.
 A saber, ele está disponível para Windows, Mac e Linux. É criado com Electron, ferramenta criada pelo GitHub que permite a criação de softwares Desktop com HTML, CSS e JavaScript.
