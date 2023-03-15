@@ -46,6 +46,8 @@ Referencia:https://rockcontent.com/br/blog/sqlite/
 
 ## SGBD -> MYSQL 
 
+## O que é o MYSQL
+
 O MySQL é um sistema de gerenciamento de banco de dados relacional de código aberto (RDBMS) suportado pela Oracle e baseado em linguagem de consulta estruturada (SQL). O sistema funciona em praticamente todas as plataformas, incluindo Linux, UNIX e Windows.O sistema é um componente importante de um conjunto de ferramentas com código aberto chamada LAMP, que usa Linux como sistema operacional, Apache como servidor web, MySQL como sistema de gerenciamento de banco de dados relacional e PHP, Perl ou Python como linguagem de script orientada a objetos.Embora possa ser usado em uma ampla variedade de aplicativos, o gerenciador de banco de dados é mais frequentemente associado a aplicativos da web e à publicação online. Assim, por trás de muitos dos principais sites do mundo, a ferramenta usada é o RDBMS, assim como de inúmeros aplicativos corporativos e de consumo baseados na web, como Facebook, Twitter e YouTube.Originalmente concebido em 1995 pela empresa sueca MySQL AB, o programa foi adquirido pela Sun Microsystems em 2008, que, por sua vez, passou para o controle da Oracle em 2010. Os desenvolvedores podem usar o software de forma gratuita, mas as empresas devem obter uma licença comercial.
 
 Referencia:https://www.tecmundo.com.br/software/223924-mysql-usar-o-sistema.htm
