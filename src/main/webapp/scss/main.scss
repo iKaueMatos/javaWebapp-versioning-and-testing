@@ -1,0 +1,24 @@
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+@import '../scss/pages/navbar.scss';
+@import '../scss/pages/formulario.scss';
+@import '../scss/pages/footer.scss';
+@import '../scss/pages/conteudo.scss';
+::-webkit-scrollbar {
+    width: 5px;
+    background-color: $yellow !important;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $white !important;
+}
+
+::-webkit-scrollbar-button {
+    height: 80px;
+    border-radius: 5px;
+}
+
+::placeholder {
+    font-size: 15px;
+    margin-right: 1px;
+}
