@@ -1,0 +1,14 @@
+@import '../../node_modules/bootstrap/scss/variables';
+.navbar {
+    border-radius: 5px;
+    background-color: $yellow !important;
+    backdrop-filter: blur(10px);
+    .nav-link {
+        font-weight: bold;
+        font-size: 21px;
+        &:hover .nav-link {
+            cursor: pointer;
+            color: $black;
+        }
+    }
+}
