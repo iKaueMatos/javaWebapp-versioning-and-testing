@@ -1,16 +1,22 @@
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
-@import '../scss/pages/navbar.scss';
-@import '../scss/pages/formulario.scss';
-@import '../scss/pages/footer.scss';
-@import '../scss/pages/conteudo.scss';
+@import '../scss/pages/navbar';
+@import '../scss/pages/formulario';
+@import '../scss/pages/footer';
+@import '../scss/pages/conteudo';
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 ::-webkit-scrollbar {
-    width: 5px;
-    background-color: $yellow !important;
+    width: 8px;
+    background-color: $white !important;
     border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: $white !important;
+    background-color: $green !important;
 }
 
 ::-webkit-scrollbar-button {

@@ -1,7 +1,6 @@
 @import '../../node_modules/bootstrap/scss/variables';
 .navbar {
-    border-radius: 5px;
-    background-color: $yellow !important;
+    /* background-color: rgba(0, 0, 0, 0) !important;*/
     backdrop-filter: blur(10px);
     .nav-link {
         font-weight: bold;

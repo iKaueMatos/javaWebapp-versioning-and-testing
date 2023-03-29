@@ -19,13 +19,6 @@
 }
 
 // Animação efeito de máquina digitando
-h2::after {
-    content: '|';
-    margin-left: 5px;
-    opacity: 1;
-    animation: pisca .15s infinite;
-}
-
 @keyframes pisca {
     0% {
         opacity: 1;
@@ -82,10 +75,4 @@ p {
             height: 213px;
         }
     }
-}
-
-hr {
-    color: $black !important;
-    height: 2px;
-    background-color: $black !important;
 }
