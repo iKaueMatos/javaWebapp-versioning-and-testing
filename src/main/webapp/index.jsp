@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <head>
-    <link rel="shortcut icon" href="assents/informacoes.png" type="image/x-icon">
+    <link rel="shortcut icon" href="assents/logo/logoFavicon.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="scss/main.css">
