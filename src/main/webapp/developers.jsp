@@ -15,7 +15,7 @@
 <body>
     <nav class="navbar navbar-light bg-light bg-transparent fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="./index.html">
+            <a class="navbar-brand" href="./index.jsp">
                 <span class="fw-bold fst-italic text-dark">Agricultura
             </span>
                 <span class="text-success fw-bold fst-italic">
