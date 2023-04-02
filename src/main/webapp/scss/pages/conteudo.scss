@@ -1,0 +1,78 @@
+@import '../../node_modules/bootstrap/scss/variables';
+//Animação
+[data-anime] {
+    opacity: 0;
+    transition: .6s;
+}
+
+[data-anime="left"] {
+    transform: translate(-50px, 0, 0);
+}
+
+[data-anime="right"] {
+    transform: translate3d(50px, 0, 0);
+}
+
+[data-anime].animate {
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
+}
+
+// Animação efeito de máquina digitando
+@keyframes pisca {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+p {
+    .paragraph::after {
+        content: '|';
+        margin-left: 5px;
+        opacity: 1;
+        animation: pisca .3s infinite;
+    }
+}
+
+.card {
+    background: $black !important;
+    border-radius: 11px;
+    img {
+        border-radius: 15px;
+    }
+}
+
+@media(max-width:2560px) {
+    .card {
+        background: $black !important;
+        border-radius: 11px;
+        width: 296px;
+    }
+    img {
+        border-radius: 15px;
+        width: 294px;
+    }
+    .igor {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 292px;
+    }
+}
+
+@media(max-width:320px) {
+    .card {
+        width: 260px;
+        height: 520px;
+        .btn-danger {
+            margin-top: 2px;
+        }
+        img {
+            width: 213px;
+            height: 213px;
+        }
+    }
+}
