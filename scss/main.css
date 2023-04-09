@@ -11742,11 +11742,13 @@ textarea.form-control-lg {
   border-radius: 12px;
   height: 500px;
   background-color: #198754 !important;
+  margin-top: 115px;
 }
 
 @media (max-width: 400px) {
   .formulario {
     width: 350px;
+    margin-top: 115px;
   }
   .form-control {
     width: 290px;
@@ -11762,6 +11764,7 @@ textarea.form-control-lg {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 70px;
   }
   .form {
     margin: 10px;
