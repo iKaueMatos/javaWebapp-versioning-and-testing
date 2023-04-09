@@ -11738,6 +11738,11 @@ textarea.form-control-lg {
   color: #000;
 }
 
+.footer-resposive {
+  position: absolute;
+  bottom: 0;
+}
+
 .formulario {
   border-radius: 12px;
   height: 500px;
