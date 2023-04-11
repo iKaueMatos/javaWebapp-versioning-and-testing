@@ -8,7 +8,7 @@
 
 .btn,
 .join {
-  background: linear-gradient(90.35deg, #2563eb 0.36%, #d946ef 201.02%);
+  background: linear-gradient(90.35deg, #25eb25 0.36%, #ffffff 201.02%);
 }
 
 .active {
@@ -16,7 +16,7 @@
 }
 
 .h1 {
-  background: linear-gradient(89.83deg, #2563eb 0.11%, #d946ef 58.65%);
+  background: linear-gradient(89.83deg, #000000 0.11%, #000000 58.65%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
