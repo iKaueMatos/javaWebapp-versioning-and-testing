@@ -1,4 +1,4 @@
-##V.1.2 Atual
+## V.1.2 Atual
 
 ## Ferramentas necessarias para instalção das dependencias e para execução do projeto☕
 
