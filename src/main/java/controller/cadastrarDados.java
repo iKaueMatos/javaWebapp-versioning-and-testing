@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import controller.Comandos;
 
 	/**	
 	  
@@ -51,7 +52,8 @@ import javax.servlet.http.HttpServletResponse;
 	        System.out.println("Texto 3" + texto3);
 
 	        //Lógica da Comparação
-	        
+	        System.out.println(Comandos.validaString(texto1));
+	        System.out.println(Comandos.validaNumerico(texto2));
 
 	    }
 	}
