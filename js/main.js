@@ -6,3 +6,6 @@ menu.addEventListener("click", () => {
     document.getElementById("menu").classList.toggle("active")
 })
 
+const option = document.getElementById("#option");
+
+
