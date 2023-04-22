@@ -4,7 +4,7 @@
 
 ## Tecnologias Utilizadas
 
-▪Java <br>
+▪JAVA <br>
 ▪SQLITE <br>
 ▪HTML/CSS <br>
 ▪TAILWIND <br>
