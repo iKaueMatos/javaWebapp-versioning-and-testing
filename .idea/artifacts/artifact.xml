@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-ejb" name="artifact">
+    <output-path>$PROJECT_DIR$/classes/artifacts/artifact</output-path>
+    <root id="root" />
+  </artifact>
+</component>
