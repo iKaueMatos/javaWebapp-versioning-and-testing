@@ -2,19 +2,19 @@
 
 ## Tecnologias Utilizadas
 
-Java <br>
-SQLITE <br>
-HTML/CSS <br>
-TAILWIND <br>
-APACHE TOMCAT<br>
-NODE JS para gerenciamento de pacotes <br>
+▪Java <br>
+▪SQLITE <br>
+▪HTML/CSS <br>
+▪TAILWIND <br>
+▪APACHE TOMCAT<br>
+▪NODE JS para gerenciamento de pacotes <br>
 
 ## Instruções de Instalação
 Clone o repositório em sua máquina local.
 Certifique-se de que as tecnologias listadas acima estejam instaladas em sua máquina.
 
 ## Uso
-
+A definir
 
 
 Para acessar o projeto, abra um navegador e navegue até http://localhost:8080/.
