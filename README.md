@@ -31,7 +31,7 @@ Este projeto está licenciado sob a licença MIT. Veja o arquivo LICENSE.md para
 Se você tiver alguma dúvida ou problema com o projeto, sinta-se à vontade para entrar em contato com o proprietário do repositório por e-mail: example@domain.com.
 
 ## Status do Projeto
-Este projeto está atualmente em desenvolvimento ativo. A versão atual é a 1.0.5
+Este projeto está atualmente em desenvolvimento ativo. A versão atual é a 1.0.7
 
 ## Agradecimentos
 Agradecemos a todos os contribuidores que ajudaram a desenvolver e melhorar este projeto. Além disso, agradecemos a todas as bibliotecas de terceiros utilizadas neste projeto.
