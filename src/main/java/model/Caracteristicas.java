@@ -2,9 +2,9 @@ package model;
 
 public abstract class Caracteristicas {
 
-	private String nome;
-	private Double preco;
-	private String regiao;
+	private String name;
+	private Double price;
+	private String region;
 	private Double carboidrato;
 	private Double proteina;
 	private Double gordura;
@@ -12,21 +12,29 @@ public abstract class Caracteristicas {
 	
 	
 	public void setNome(String nome) {
-		this.nome = nome;
+		this.name = nome;
 	}
 	
 	public String getNome() {
-		return nome;
+		return name;
 	}
 	
 	public void setPreco(Double preco) {
-		this.preco = preco;
+		this.price = preco;
 	}
 	
 	public Double getPreco() {
-		return preco;
+		return price;
+	}
+	
+	public void setRegion(String region) {
+		this.region = region;
 	}
 
+	public String getRegion() {
+		return region;
+	}
+	
 	public void setCarboidrato(Double valor){
 		this.carboidrato = valor;
 	}
@@ -51,7 +59,7 @@ public abstract class Caracteristicas {
 		return gordura;
 	}
 	
-	public Integer valorEnergeticoCalc(){
+	/*public Integer valorEnergeticoCalc(){
 		if(carboidrato < 4){
 			System.out.println("Este produto não atende aos requisitos de informações nutricionais, por este motivo ele é invalido.");
 		}
@@ -74,5 +82,5 @@ public abstract class Caracteristicas {
 			valorEnergetico = Integer.parseInt(valorEnergeticoi);
 			return valorEnergetico; 
 		}
-	}
+	}*/
 }
