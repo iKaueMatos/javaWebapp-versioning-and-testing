@@ -22,6 +22,7 @@ import model.Produto;
 	    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	        response.getWriter().append("Served at: ").append(request.getContextPath());
 	        System.out.println("RECEBI A REQUISIÇÃO | GET");
+	           
 	    }
 	    //POST
 	    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -33,62 +34,72 @@ import model.Produto;
 	        String name = request.getParameter("nome");
 	        String region = request.getParameter("regiao");
 	        String area = request.getParameter("area");
+	        float areaConvertida = Comandos.validaArea(area);
+	        String estilo = "";
 	        
 	        
 	        //Teste da comparação
-	        Produto macaOrg  = new Produto();
-	        Produto macaTrad = new Produto();
+	             
 	        
-	        macaOrg.setPreco(10.9);
-	        macaTrad.setPreco(6.50);
-	        System.out.println("Você terá " + Produto.comparison(macaOrg, macaTrad) + "% de ganho.");
+	        //Produtos Tradicionais
+	        Produto produtoTrad1  = new Produto("Banana", "Sul", 6.90);
+	        Produto produtoTrad2  = new Produto("Uva", "Norte", 4.50);
+	        Produto produtoTrad3  = new Produto("Milho", "Nordeste", 7.90);
+	        Produto produtoTrad4  = new Produto("Alface", "Suldeste", 4.30);
+	        Produto produtoTrad5  = new Produto("Batata", "Centro-Oeste", 6.86);
+	        
+	        //Produtos organicos
+	        Produto produtoOrg1  = new Produto("Banana", "Sul", 10.00);
+	        Produto produtoOrg2  = new Produto("Uva", "Norte", 9.90);
+	        Produto produtoOrg3  = new Produto("Milho", "Nordeste", 8.90);
+	        Produto produtoOrg4  = new Produto("Alface", "Suldeste", 7.70);
+	        Produto produtoOrg5  = new Produto("Batata", "Centro-Oeste", 8.99);
+	        
+	        
+	        //Criar forma de detectar qual regiao o usuario escolheu, com isso definir
+	        //quais produtos entram como parametro no comparison() abaixo.
+	        
+	        System.out.println("Você terá " + Produto.comparison(produtoOrg1, produtoTrad1) + "% de ganho "
+	        		+ "sobre o produto convencional");
+	  
+	        //Estilo
+	        
+	        Comandos.estiloPagina(estilo);
+	        response.getWriter().println(Comandos.estiloPagina(estilo));
+	        
+		    //verification region
+	        
+	        Comandos.verificationRegion(region);
+	        response.getWriter().println(Comandos.verificationRegion(region));
 	        
 	        
 	        
+	        //verification name
+	        
+	        boolean validacaoNome = Comandos.validaString(name);
+	        if (validacaoNome == true) {
+	        	 response.getWriter().println("Nome válido");
+	        	 System.out.println("Nome válido");
+	        } else {
+	        	response.getWriter().println("Nome inválido");
+	        	System.out.println("Nome inválido");
+	        }
+	        
+	        //verification area
+	        
+	        if (areaConvertida > 0) {
+	        	response.getWriter().println("Área válida");
+	        	System.out.println("Área válida");
+	        	
+	        } else {
+	        	response.getWriter().println("Área inválida");
+	        	System.out.println("Área Inválida");
+	        }
 	        
 	    }	   
 	   
-	    //verification
+
 	  
-	    public String verificationName(String name) throws IOException {
-	    	
-	    	if (Comandos.validaString(name)){
-	    		System.out.println("Nome permitido");
-	    		ServletResponse response = null;
-	    		PrintWriter out = response.getWriter();
-	    		out.printf("");
-	    		// show to developers
-			//Direct forward to database
-			} else {
-				ServletResponse response = null;
-				try (PrintWriter out = response.getWriter()) {
-					out.printf("<p>Error digite seu nome novamente</p>");
-				}
-			}
-			return name;
-		   
-	    }
 	   
-	    public String verificationPrice(String area) throws IOException {
-	    	
-	    	if (Comandos.validaNumerico(area) != 0 ) {
-				boolean priceBank = true;
-			}else {
-				boolean princeBank = false;
-			}
-			return area;
-	
-	    }
-	    
-	    public static void verificationRegion(String region) throws IOException {
-	    	
-	    	if(region.equals("sul") || region.equals("sudeste") || region.equals("norte") || region.equals("nordeste") || region.equals("centrooeste")) {
-			System.out.println("Região válida");
-			} else {
-				System.out.println("Região inválida");
-			}
-	    	
-	    	
-	    }
  	       
 	}
