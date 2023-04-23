@@ -70,13 +70,14 @@
                     </div>
                     <form action="index" method="Post">
                         <div class="mb-4">
-                            <input type="text" name="nome" placeholder="Nome" class="appearance-none block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500 rounded focus:outline-none">
+                            <input type="text" name="nome" placeholder="Primeiro nome" class="appearance-none block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500 rounded focus:outline-none">
                         </div>
                         <div class="mb-4">
-                            <input type="Text" name="regiao" placeholder="Região" class="appearance-none block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500 rounded focus:outline-none">
+                            <input type="Text" name="regiao" placeholder="Região" class="appearance-none block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500 rounded focus:outline-none" required>
                         </div>
                         <div class="mb-4">
-                            <input type="Text"  name="area" placeholder="Valor energetico" class="appearance-none block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500 rounded focus:outline-none">
+                            <input type="Text"  name="area" placeholder="m²" class="appearance-none block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-50 focus:bg-white border border-gray-200 focus:border-gray-500 rounded focus:outline-none" required>
+                        
                         </div>
                         <div class="mb-4">
                             <button class="inline-block w-full px-8 py-4 leading-none text-white bg-green-500 hover:bg-green-700 font-semibold rounded shadow" type="submit">Enviar</button>
