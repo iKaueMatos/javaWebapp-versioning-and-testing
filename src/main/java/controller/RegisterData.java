@@ -1,6 +1,8 @@
 package controller;
 import java.io.IOException;
 import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
@@ -37,30 +39,20 @@ import model.Produto;
 	        float areaConvertida = Comandos.validaArea(area);
 	        String estilo = "";
 	        
+	        Produto p1 = new Produto("Arroz","Sudeste",5.50);
+	        
+	        RequestDispatcher teste = request.getRequestDispatcher("teste.jsp");
+			request.setAttribute("produto", p1.getNome());
+			teste.forward(request, response);
+	        
 	        
 	        //Teste da comparação
-	             
-	        
-	        //Produtos Tradicionais
-	        Produto produtoTrad1  = new Produto("Banana", "Sul", 6.90);
-	        Produto produtoTrad2  = new Produto("Uva", "Norte", 4.50);
-	        Produto produtoTrad3  = new Produto("Milho", "Nordeste", 7.90);
-	        Produto produtoTrad4  = new Produto("Alface", "Suldeste", 4.30);
-	        Produto produtoTrad5  = new Produto("Batata", "Centro-Oeste", 6.86);
-	        
-	        //Produtos organicos
-	        Produto produtoOrg1  = new Produto("Banana", "Sul", 10.00);
-	        Produto produtoOrg2  = new Produto("Uva", "Norte", 9.90);
-	        Produto produtoOrg3  = new Produto("Milho", "Nordeste", 8.90);
-	        Produto produtoOrg4  = new Produto("Alface", "Suldeste", 7.70);
-	        Produto produtoOrg5  = new Produto("Batata", "Centro-Oeste", 8.99);
-	        
-	        
+	
 	        //Criar forma de detectar qual regiao o usuario escolheu, com isso definir
 	        //quais produtos entram como parametro no comparison() abaixo.
 	        
-	        System.out.println("Você terá " + Produto.comparison(produtoOrg1, produtoTrad1) + "% de ganho "
-	        		+ "sobre o produto convencional");
+//	        System.out.println("Você terá " + Produto.comparison(produtoOrg1, produtoTrad1) + "% de ganho "
+//	        		+ "sobre o produto convencional");
 	  
 	        //Estilo
 	        
@@ -69,8 +61,9 @@ import model.Produto;
 	        
 		    //verification region
 	        
-	        Comandos.verificationRegion(region);
-	        response.getWriter().println(Comandos.verificationRegion(region));
+	        Comandos.validationRegion(region);
+	        response.getWriter().println(Comandos.validationRegion(region));
+	        System.out.println("Teste valor" + Produto.comparison(Comandos.validationRegion(region)));
 	        
 	        
 	        
@@ -96,7 +89,17 @@ import model.Produto;
 	        	System.out.println("Área Inválida");
 	        }
 	        
-	    }	   
+	        // Mensagem sucesso
+	        
+	        if (validacaoNome == true && areaConvertida > 0 && Comandos.validationRegion(region) == "<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ' crossorigin='anonymous'>"
+	        		+ "<div class='alert alert-success col-5 m-3' role='alert'>Região valida</div>") {
+	        	response.getWriter().println("<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ' crossorigin='anonymous'>"
+	        		+ "<div class='alert alert-success col-5 m-3' role='alert'>Formulário enviado com sucesso</div>");
+	        } 
+	        
+	    }	  
+	    
+	   
 	   
 
 	  
