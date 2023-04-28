@@ -3,8 +3,14 @@
 <head>
     <title>AGO - Agricutura orgânica</title>
     <!-- style -->
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script src="./js/Api.js"></script>   
     <link rel="stylesheet" href="./dist/output.css">
     <link rel="stylesheet" href="style.css">
+    <!--Jquery-->
+    <!-- <script src="./js/jquery-3.6.4.js"></script> -->
+    
+    <!--The end jquery-->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -60,58 +66,61 @@
             <div class="flex justify-center items-center h-screen bg-white">
                 <div id="form" class="block bg-slate-50 p-6 rounded-xl shodow-md  w-90">
                     <!--Formulario metodo de envio POST-->
-                    <form action="" method="Post">
+                    <form >
                         <h2 class="text-green-700 text-3xl font-semibold my-4">Registre-se</h2>
                         <!-- full name -->
-                        <div id="fullName" class="flex flex-row">
+                        <div class="flex flex-row">
                             <!--Nome -->
                             <div id="firstName" class="w-1/2 mr-1">
                                 <label for="fname" class="text-sm">Nome</label><br>
-                                <input type="text" name="" id="fname" requered
+                                <input type="text" name="nome" id="nome" 
                                     class="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-green-600 shadow-sm">
                             </div>
                             <!-- Sobrenome-->
                             <div id="lastName" class="w-1/2 mr-1">
                                 <label for="sobrenome" class="text-sm" >Sobrenome</label><br>
-                                <input type="sobrenome" name="sobrenome" id="sobrenome" requered
+                                <input type="sobrenome" name="sobrenome" id="sobrenome" 
                                     class="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-grenn-600 shadow-sm">
                             </div>
                         </div>
 
                         <!--Telefone-->
                         <label for="telefone" class="text-sm">Telefone</label><br>
-                        <input type="text" placeholder="11 9999-9999" name="telefone" id="telefone" requered
+                        <input type="text" placeholder="11 9999-9999" name="telefone" id="telefone"
                                 class="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-green-600 shadow-sm">
 
                         <!--idade-->
                         <label for="idade" class="text-sm" >Idade</label><br>
-                        <input type="text" name="idade" id="idade" requered
+                        <input type="text" name="idade" id="idade" 
                                         class="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-green-600 shadow-sm">
                         
                         <!-- Informações CEP -->
                         <label for="cep" class="text-sm" >CEP</label><br>
-                        <input type="text" placeholder="00000-07" name="cep" id="cep" required
+                        <input type="text" placeholder="00000-07" name="cep" id="cep" 
                             class="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-green-600 shadow-sm">
                     
                         <!--Bairro-->
-                        <label for="bairro" class="text-sm">Bairro</label><br>
-                        <input type="text" name="" id="bairro"
+                        <label for="bairro" class="text-sm">Localidade</label><br>
+                        <input type="text" name="localidade" id="cidade" readonly
                             class="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-green-600 shadow-sm">
+
+                        <label for="bairro" class="text-sm">logradouro</label><br>
+                        <input type="text" name="logradouro" id="logradouro" readonly
+                                class="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-green-600 shadow-sm">
                         <!--Estado-->
                         <label for="uf" class="text-sm">UF</label><br>
-                        <input type="text" name="uf" id="uf"
+                        <input type="text" name="uf" id="uf" readonly
                             class="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-green-600 shadow-sm">
                         
-                        <!-- Genero -->
-                        <div id="gender" class="text-sm mb-2">
-                            <p class="mt-2">Genero</p>
-                            <input type="radio" name="genero" id="male" class="text-sm mx-1"><label for="male">Male</label>
-                            <input type="radio" name="genero" id="female" class="text-sm mx-1"><label for="female">Female</label>
-                        </div>
+                            <label for="bairro" class="text-sm">Bairro</label><br>
+                            <input type="text" name="bairro" id="bairro" readonly
+                                    class="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-green-600 shadow-sm">
+
+                                    <br>
                         <!--button -->
-                        <button type="submit" name="" id="envio"
+                        <button type="submit" name="button" id="btn" 
                             class="bg-green-500 w-full h-10 cursor-pointer text-white rounded-md hover:bg-green-600 hover:outline outline-2 outline-green-600 outline-offset-2 text-sm">Enviar</button>
-                            <br>
+                           
                     </form>
                 </div>
             </div>
@@ -126,8 +135,10 @@
             </div> 
         </footer>
         <!--The end footer-->
+    
         <!--The end-->
-        <script src="./js/main.js"></script>
-        <script src="./js/dropdown.js"></script>
+        
+    
+    <script src="./js/main.js"></script>
     </body>
 </html>
