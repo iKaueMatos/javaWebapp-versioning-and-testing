@@ -3,8 +3,7 @@
 <head>
     <title>AGO - Agricutura orgânica</title>
     <!-- style -->
-    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-    <script src="./js/Api.js"></script>   
+   
     <link rel="stylesheet" href="./dist/output.css">
     <link rel="stylesheet" href="style.css">
     <!--Jquery-->
@@ -66,7 +65,7 @@
             <div class="flex justify-center items-center h-screen bg-white">
                 <div id="form" class="block bg-slate-50 p-6 rounded-xl shodow-md  w-90">
                     <!--Formulario metodo de envio POST-->
-                    <form >
+                    <form  method="post">
                         <h2 class="text-green-700 text-3xl font-semibold my-4">Registre-se</h2>
                         <!-- full name -->
                         <div class="flex flex-row">
@@ -115,15 +114,14 @@
                             <label for="bairro" class="text-sm">Bairro</label><br>
                             <input type="text" name="bairro" id="bairro" readonly
                                     class="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-green-600 shadow-sm">
-
-                                    <br>
-                        <!--button -->
-                        <button type="submit" name="button" id="btn" 
-                            class="bg-green-500 w-full h-10 cursor-pointer text-white rounded-md hover:bg-green-600 hover:outline outline-2 outline-green-600 outline-offset-2 text-sm">Enviar</button>
-                           
-                    </form>
+                                    <!--button -->
+                            <button type="submit" name="button" id="btn" 
+                                    class="bg-green-500 w-full h-10 cursor-pointer text-white rounded-md hover:bg-green-600 hover:outline outline-2 outline-green-600 outline-offset-2 text-sm">Enviar</button>
+                        </form>
+                        <br>
+                        <br>
+                    </div>
                 </div>
-            </div>
                 <!--The-end-->
         <!-- footer -->
            
@@ -137,7 +135,9 @@
         <!--The end footer-->
     
         <!--The end-->
-        
+
+        <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+        <script src="./js/Api.js"></script>     
     
     <script src="./js/main.js"></script>
     </body>
