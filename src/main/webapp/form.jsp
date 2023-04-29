@@ -58,7 +58,7 @@
         <div class="flex justify-center items-center h-screen bg-white">
             <div id="form" class="block bg-slate-50 p-6 rounded-xl shodow-md  w-90">
                 <!--Formulario metodo de envio POST-->
-                <form action="index" method="post">
+                <form action="RegisterData" method="post">
                     <h2 class="text-green-700 text-3xl font-semibold my-4">Registre-se</h2>
                     <!-- full name -->
                     <div class="flex flex-row">

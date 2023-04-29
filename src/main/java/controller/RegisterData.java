@@ -1,6 +1,11 @@
 package controller;
+
+//Biblioteca
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.ServletResponse;
@@ -8,8 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import DAO.Conexao;
-import java.io.File;
+import model.Trabalhador;
 import java.io.IOException;
 
 	/**Servlet implementation class cadastrarDados*/
@@ -20,7 +24,8 @@ import java.io.IOException;
 	    public RegisterData() {
 	        super();
 	    }
-	    //GET
+	    
+	    //GET -> Pedindo a informação
 	    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	        response.getWriter().append("Served at: ").append(request.getContextPath());
 	        System.out.println("RECEBI A REQUISIÇÃO | GET");
@@ -28,23 +33,16 @@ import java.io.IOException;
 	        String cep = request.getParameter("cep");
 	        String uf = request.getParameter("uf");
 	        String bairro = request.getParameter("bairro");
-	        
-	     
-	        
-	        System.out.println("Nome" +
- 				   "idade:" + cep +
- 				   "Estado:" + uf +
- 				   "Bairro:" + bairro);
- 		}
- 			
-	   
-	    //POST
+	       
+	    }
+	    
+	    //POST -> Recebe as informações do usuario
 	    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	      
 	        request.setCharacterEncoding("UTF-8");
 	        response.setContentType("text/html; charset=UTF-8");
 	        System.out.println("RECEBI A REQUISIÇÃO | POST");
-	       
+	     
 	        String nome = request.getParameter("nome");
 	        String sobrenome = request.getParameter("sobrenome");
 	        String localidade = request.getParameter("localidade");
@@ -53,26 +51,26 @@ import java.io.IOException;
 	        String cep = request.getParameter("cep");
 	        String uf = request.getParameter("uf");
 	        String bairro = request.getParameter("bairro");
+	         
+	        //Banco de dados AZURE
+	        Trabalhador teste = new Trabalhador(nome, sobrenome, localidade, telefone, idade, cep, uf, bairro);
+	        teste.ConexaoAzure();
 	        
-
-	        
-	        //Dispatcher
-	        
-	        String mensagem;
-	       
+	        //Dispatcher Imagem de sucesso
+	       String mensagem;
 	       mensagem = "Dados enviados com sucesso";
-	       
-	       request.setAttribute("mensagem", mensagem);
-	       RequestDispatcher dispatcher = request.getRequestDispatcher("form.jsp");
-	       dispatcher.forward(request, response);
-	       
-	       
-	       
-	      //teste conexão
-	       DAO.Conexao.conectar();       
-	      
+	       		if(request.getParameter("nome") != null ) {
+			    	  request.setAttribute("mensagem", mensagem);
+				      RequestDispatcher dispatcher = request.getRequestDispatcher("form.jsp");
+				      dispatcher.forward(request, response); 
+		      
+			     } else {
+			         mensagem = "Os campos precisam ser preenchidos!";
+			    	 request.setAttribute("mensagem", mensagem);
+				     RequestDispatcher dispatcher = request.getRequestDispatcher("form.jsp");
+				     dispatcher.forward(request, response);
+			     }
 	    }
-	        
-
+}
  	       
-	}
+	
