@@ -1,14 +1,19 @@
 package controller;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import controller.Comandos;
-import model.Produto;
+//import DAO.Conexao;
+import java.io.File;
+import java.io.IOException;
 
 	/**Servlet implementation class cadastrarDados*/
 	@WebServlet("/RegisterData")
@@ -23,83 +28,77 @@ import model.Produto;
 	        response.getWriter().append("Served at: ").append(request.getContextPath());
 	        System.out.println("RECEBI A REQUISIÇÃO | GET");
 	           
-	    }
+	        String cep = request.getParameter("cep");
+	        String uf = request.getParameter("uf");
+	        String bairro = request.getParameter("bairro");
+	        
+	     
+	        
+	        System.out.println("Nome" +
+ 				   "idade:" + cep +
+ 				   "Estado:" + uf +
+ 				   "Bairro:" + bairro);
+ 		}
+ 			
+	   
 	    //POST
 	    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	        //Defining what will be the request and response of the text
+	      
 	        request.setCharacterEncoding("UTF-8");
 	        response.setContentType("text/html; charset=UTF-8");
 	        System.out.println("RECEBI A REQUISIÇÃO | POST");
 	       
-	        String name = request.getParameter("nome");
-	        String region = request.getParameter("regiao");
-	        String area = request.getParameter("area");
-	        float areaConvertida = Comandos.validaArea(area);
-	        String estilo = "";
+	        String nome = request.getParameter("nome");
+	        String sobrenome = request.getParameter("sobrenome");
+	        String localidade = request.getParameter("localidade");
+	        String telefone = request.getParameter("telefone");
+	        String idade = request.getParameter("idade");
+	        String cep = request.getParameter("cep");
+	        String uf = request.getParameter("uf");
+	        String bairro = request.getParameter("bairro");
 	        
-	        
-	        //Teste da comparação
-	             
-	        
-	        //Produtos Tradicionais
-	        Produto produtoTrad1  = new Produto("Banana", "Sul", 6.90);
-	        Produto produtoTrad2  = new Produto("Uva", "Norte", 4.50);
-	        Produto produtoTrad3  = new Produto("Milho", "Nordeste", 7.90);
-	        Produto produtoTrad4  = new Produto("Alface", "Suldeste", 4.30);
-	        Produto produtoTrad5  = new Produto("Batata", "Centro-Oeste", 6.86);
-	        
-	        //Produtos organicos
-	        Produto produtoOrg1  = new Produto("Banana", "Sul", 10.00);
-	        Produto produtoOrg2  = new Produto("Uva", "Norte", 9.90);
-	        Produto produtoOrg3  = new Produto("Milho", "Nordeste", 8.90);
-	        Produto produtoOrg4  = new Produto("Alface", "Suldeste", 7.70);
-	        Produto produtoOrg5  = new Produto("Batata", "Centro-Oeste", 8.99);
-	        
-	        
-	        //Criar forma de detectar qual regiao o usuario escolheu, com isso definir
-	        //quais produtos entram como parametro no comparison() abaixo.
-	        
-	        System.out.println("Você terá " + Produto.comparison(produtoOrg1, produtoTrad1) + "% de ganho "
-	        		+ "sobre o produto convencional");
-	  
-	        //Estilo
-	        
-	        Comandos.estiloPagina(estilo);
-	        response.getWriter().println(Comandos.estiloPagina(estilo));
-	        
-		    //verification region
-	        
-	        Comandos.verificationRegion(region);
-	        response.getWriter().println(Comandos.verificationRegion(region));
-	        
-	        
-	        
-	        //verification name
-	        
-	        boolean validacaoNome = Comandos.validaString(name);
-	        if (validacaoNome == true) {
-	        	 response.getWriter().println("Nome válido");
-	        	 System.out.println("Nome válido");
-	        } else {
-	        	response.getWriter().println("Nome inválido");
-	        	System.out.println("Nome inválido");
-	        }
-	        
-	        //verification area
-	        
-	        if (areaConvertida > 0) {
-	        	response.getWriter().println("Área válida");
-	        	System.out.println("Área válida");
-	        	
-	        } else {
-	        	response.getWriter().println("Área inválida");
-	        	System.out.println("Área Inválida");
-	        }
-	        
-	    }	   
-	   
 
-	  
-	   
+	        
+	        //Dispatcher
+	        
+	       String mensagem;
+	       mensagem = "Dados enviados com sucesso";
+	     if(request.getParameter("nome") != null ) {
+	    	  request.setAttribute("mensagem", mensagem);
+		      RequestDispatcher dispatcher = request.getRequestDispatcher("form.jsp");
+		      dispatcher.forward(request, response);
+		      conectar();  
+	     } else {
+	         mensagem = "Os campos precisam ser preenchidos!";
+	    	 request.setAttribute("mensagem", mensagem);
+		     RequestDispatcher dispatcher = request.getRequestDispatcher("form.jsp");
+		     dispatcher.forward(request, response);
+	     }
+	    }
+	    
+	     public static void conectar() {
+	     	
+	         Connection conn = null;
+	         try {
+	             String url = "jdbc:mysql://server12mysql.database.azure.com:3306/crud?useSSL=true&requireSSL=false";
+	             String user = "Kaue";
+	             String password = "Bontlindo12/";
+	          
+	             conn = DriverManager.getConnection(url, user, password);
+
+	             if (conn != null) {
+	                 System.out.println("Conexão estabelecida com sucesso!");
+	             }
+
+	         } catch (SQLException ex) {
+	             System.out.println("Ocorreu um erro ao conectar ao banco de dados: " + ex.getMessage());
+	         	}
+	     	
+
+	       
+	      
+	    }
+	        
+
  	       
 	}
