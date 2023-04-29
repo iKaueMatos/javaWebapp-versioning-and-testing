@@ -4,15 +4,11 @@
     <html lang="pt-br">
 
     <head>
-        <title>AGO - Agricutura orgânica</title>
+        <title>AGO - Agricutura organica</title>
         <!-- style -->
 
         <link rel="stylesheet" href="./dist/output.css">
         <link rel="stylesheet" href="style.css">
-        <!--Jquery-->
-        <!-- <script src="./js/jquery-3.6.4.js"></script> -->
-
-        <!--The end jquery-->
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -62,7 +58,7 @@
         <div class="flex justify-center items-center h-screen bg-white">
             <div id="form" class="block bg-slate-50 p-6 rounded-xl shodow-md  w-90">
                 <!--Formulario metodo de envio POST-->
-                <form method="post">
+                <form action="index" method="post">
                     <h2 class="text-green-700 text-3xl font-semibold my-4">Registre-se</h2>
                     <!-- full name -->
                     <div class="flex flex-row">
@@ -91,7 +87,7 @@
                     <input type="text" placeholder="00000-07" name="cep" id="cep" class="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-green-600 shadow-sm">
 
                     <!--Bairro-->
-                    <label for="bairro" class="text-sm">Localidade</label><br>
+                    <label for="cidade" class="text-sm">Localidade</label><br>
                     <input type="text" name="localidade" id="cidade" readonly class="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-green-600 shadow-sm">
 
                     <label for="bairro" class="text-sm">logradouro</label><br>
@@ -104,6 +100,13 @@
                     <input type="text" name="bairro" id="bairro" readonly class="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-green-600 shadow-sm">
                     <!--button -->
                     <button type="submit" name="button" id="btn" class="bg-green-500 w-full h-10 cursor-pointer text-white rounded-md hover:bg-green-600 hover:outline outline-2 outline-green-600 outline-offset-2 text-sm">Enviar</button>
+                    <div> 
+                        <%
+                        String mensagem = (String) request.getAttribute("mensagem");
+                        if (mensagem != null)
+                        out.print(mensagem);
+                        %>
+                    </div>
                 </form>
                 <br>
                 <br>
@@ -116,7 +119,7 @@
             <div class="line w-full h-[1px] absolute left-0 opacity-20 md-[6px] bg-[#000]"></div>
             <div class="bottom flex justify-center gap-5 md:justify-between flex-wrap px-[5%] py-[26px]">
                 <div class="left">
-                    © 2023 Agricultura orgânica - Todos os direitos reservados.
+                    2023 Agricultura organnica - Todos os direitos reservados.
                 </div>
         </footer>
         <!--The end footer-->
