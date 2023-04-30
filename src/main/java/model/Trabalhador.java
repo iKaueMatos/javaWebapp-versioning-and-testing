@@ -3,6 +3,7 @@ package model;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
+import controller.Validacao;
 import dao.Conexao;
 
 public class Trabalhador extends Conexao {
@@ -13,18 +14,20 @@ public class Trabalhador extends Conexao {
 	private String idade;
 	private String cep;
 	private String uf;
+	private String logradouro;
 	private String bairro;
 	
 	
 	 public Trabalhador(String nome, String sobrenome ,String localidade, String telefone,
-			 String idade, String cep, String uf, String bairro){
-		setNome(nome);
-		setSobrenome(sobrenome);
+			 String idade, String cep, String uf, String logradouro, String bairro){
+		setNome(Validacao.validaString(nome));
+		setSobrenome(Validacao.validaString(sobrenome));
 		setLocalidade(localidade);
-		setTelefone(telefone);
-		setIdade(idade);
-		setCep(cep);
-		setUf(uf);
+		setTelefone(Validacao.validaNumerico(telefone));
+		setIdade(Validacao.validaNumerico(idade));
+		setCep(Validacao.validaNumerico(cep));
+		setUf(Validacao.validaString(uf));
+		setLogradouro(logradouro);
 		setBairro(bairro);
 	}
 	 
@@ -84,6 +87,14 @@ public class Trabalhador extends Conexao {
 
 	public void setBairro(String bairro) {
 		this.bairro = bairro;
+	}
+	
+	public void setLogradouro(String logradouro) {
+		this.logradouro = logradouro;
+	}
+	
+	public String getLogradouro() {
+		return logradouro;
 	}
 
 	public String getCep() {

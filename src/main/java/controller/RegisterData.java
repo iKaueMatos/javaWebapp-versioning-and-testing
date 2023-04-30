@@ -11,8 +11,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.net.URLDecoder;
 import model.Trabalhador;
 import dao.Conexao;
+import controller.Validacao;
 
 //import DAO.Conexao;
 import java.io.File;
@@ -52,16 +54,26 @@ import java.io.IOException;
 	        System.out.println("RECEBI A REQUISIÇÃO | POST");
 	       
 	        String nome = request.getParameter("nome");
+	        String decodedNome = URLDecoder.decode(nome, "UTF-8");
 	        String sobrenome = request.getParameter("sobrenome");
+	        String decodedSobrenome = URLDecoder.decode(sobrenome, "UTF-8");
 	        String localidade = request.getParameter("localidade");
+	        String decodedLocalidade = URLDecoder.decode(localidade, "UTF-8");
 	        String telefone = request.getParameter("telefone");
 	        String idade = request.getParameter("idade");
 	        String cep = request.getParameter("cep");
 	        String uf = request.getParameter("uf");
+	        String logradouro = request.getParameter("logradouro");
+	        String decodedLogradouro = URLDecoder.decode(logradouro, "UTF-8");
 	        String bairro = request.getParameter("bairro");
+	        String decodedBairro = URLDecoder.decode(bairro, "UTF-8");
+	        
+	        //Validacao
+	       
+	        
 
-
-	        Trabalhador teste = new Trabalhador(nome, sobrenome, localidade, telefone, idade, cep, uf, bairro);
+	        Trabalhador teste = new Trabalhador(decodedNome, decodedSobrenome, decodedLocalidade, telefone,
+	        		idade, cep, uf, decodedLogradouro, decodedBairro);
 	        teste.conectar();
 	        teste.insert(teste);
 	        teste.select();

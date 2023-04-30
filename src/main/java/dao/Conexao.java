@@ -29,8 +29,9 @@ public class Conexao {
 		String cep = trabalhador.getCep();
 		String uf = trabalhador.getUf();
 		String bairro = trabalhador.getBairro();
+		String logradouro = trabalhador.getLogradouro();
 		String url = "jdbc:mysql://server12mysql.mysql.database.azure.com:3306/apsjava";
-		String comando = "INSERT INTO Trabalhadores (nome, sobrenome, localidade, telefone, idade, cep, uf, bairro) VALUES ('"+ nome +"','"+sobrenome+"','"+localidade+"','"+telefone+"','"+idade+"','"+cep+"','"+uf+"','"+bairro+"');";
+		String comando = "INSERT INTO Trabalhadores (nome, sobrenome, localidade, telefone, idade, cep, uf, bairro, logradouro) VALUES ('"+ nome +"','"+sobrenome+"','"+localidade+"','"+telefone+"','"+idade+"','"+cep+"','"+uf+"','"+bairro+"','"+logradouro+"');";
 		try {
 			Connection conn = DriverManager.getConnection(url, "Kaue", "Bontlindo12/");
 			//AQUI VAI O CÓDIGO
@@ -61,7 +62,8 @@ public class Conexao {
 				String cep = resultado.getString("cep");
 				String uf = resultado.getString("uf");
 				String bairro = resultado.getString("bairro");
-				System.out.println("\nNome: "+nome+"\nSobrenome: "+sobrenome+"\nLocalidade: "+localidade+"\nTelefone: "+telefone+"\nIdade: "+idade+"\nCEP: "+cep+"\nUF: "+uf+"\nBairro: "+bairro+".");
+				String logradouro = resultado.getString("logradouro");
+				System.out.println("\nNome: "+nome+"\nSobrenome: "+sobrenome+"\nLocalidade: "+localidade+"\nTelefone: "+telefone+"\nIdade: "+idade+"\nCEP: "+cep+"\nUF: "+uf+"\nBairro: "+bairro+"\nLogradouro: "+logradouro);
 			}
 			System.out.println(numero + " resultados encontrados.");
 			conn.close();

@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+   
     <!DOCTYPE html>
     <html lang="pt-br">
 
@@ -17,12 +18,14 @@
 
     <body class="bg-white  min-h-screen">
 
+    
+
         <div class="container max-w-[1440px] mx-auto">
             <!-- navbar -->
             <div class="navbar bg-transparent  border-spacing-1 fixed w-full top-0 max-w-[1440px]">
                 <div class="container flex justify-between items-center py-3 w-full max-w-[1440px] mx-auto px-[5%]">
                     <div class="left">
-                        <h1 class="font-bold text-lg"><a href="./index.html">Agricultura Org‚nica</a></h1>
+                        <h1 class="font-bold text-lg"><a href="./index.html">Agricultura Org√¢nica</a></h1>
 
                     </div>
                     <!-- in laptops -->
@@ -33,9 +36,9 @@
                         <div class="item text-sm font-medium leading-3 cursor-pointer hover:text-green-600 duration-500 text-text-black">
                             <a href="./table.html">Tabela</a></div>
                         <div class="item text-sm font-medium leading-3 cursor-pointer hover:text-green-600 duration-500 text-text-black">
-                            <a href="./graphic.html">Gr·fico</a></div>
+                            <a href="./graphic.html">Gr√°fico</a></div>
                         <div class="item mx-auto text-center py-6 text-sm font-medium leading-3 cursor-pointer hover:text-green-600 duration-500 text-black">
-                            RelatÛrio</div>
+                            Relat√≥rio</div>
                     </div>
                     <!-- in mobile phones -->
                     <div id="mobile-bar" class="block md:hidden z-50 w-8 h-8">
@@ -58,14 +61,14 @@
         <div class="flex justify-center items-center h-screen bg-white">
             <div id="form" class="block bg-slate-50 p-6 rounded-xl shodow-md  w-90">
                 <!--Formulario metodo de envio POST-->
-                <form action="index" method="post">
+                <form action="index" method="post" accept-charset="UTF-8" >
                     <h2 class="text-green-700 text-3xl font-semibold my-4">Registre-se</h2>
                     <!-- full name -->
                     <div class="flex flex-row">
                         <!--Nome -->
                         <div id="firstName" class="w-1/2 mr-1">
                             <label for="fname" class="text-sm">Nome</label><br>
-                            <input type="text" name="nome" id="nome" class="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-green-600 shadow-sm">
+                            <input type="text" name="nome" id="nome" class="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-green-600 shadow-sm" >
                         </div>
                         <!-- Sobrenome-->
                         <div id="lastName" class="w-1/2 mr-1">
@@ -82,7 +85,7 @@
                     <label for="idade" class="text-sm">Idade</label><br>
                     <input type="text" name="idade" id="idade" class="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-green-600 shadow-sm">
 
-                    <!-- InformaÁıes CEP -->
+                    <!-- Informa√ß√µes CEP -->
                     <label for="cep" class="text-sm">CEP</label><br>
                     <input type="text" placeholder="00000-07" name="cep" id="cep" class="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-green-600 shadow-sm">
 
@@ -90,7 +93,7 @@
                     <label for="cidade" class="text-sm">Localidade</label><br>
                     <input type="text" name="localidade" id="cidade" readonly class="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-green-600 shadow-sm">
 
-                    <label for="bairro" class="text-sm">logradouro</label><br>
+                    <label for="logradouro" class="text-sm">logradouro</label><br>
                     <input type="text" name="logradouro" id="logradouro" readonly class="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-green-600 shadow-sm">
                     <!--Estado-->
                     <label for="uf" class="text-sm">UF</label><br>

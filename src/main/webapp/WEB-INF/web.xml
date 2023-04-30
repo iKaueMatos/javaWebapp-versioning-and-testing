@@ -14,4 +14,7 @@ xmlns="http://xmlns.jcp.org/xml/ns/javaee"
          <url-pattern>/index</url-pattern>
      </servlet-mapping>
 
+
+	
+
 </web-app>
