@@ -2,16 +2,26 @@
 <web-app id="WebApp_ID" version="3.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 xmlns="http://xmlns.jcp.org/xml/ns/javaee"
  xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd ">
-  <display-name>Aps</display-name>
+
+ <display-name>Aps</display-name>
  <servlet>
     <servlet-name>register</servlet-name>
      <servlet-class>controller.RegisterData</servlet-class>
       </servlet>
 
+	<servlet>
+	<servlet-name>buscar</servlet-name>
+	<servlet-class>controller.BuscarTrabalhadorController</servlet-class>
+	</servlet>
 
      <servlet-mapping>
          <servlet-name>register</servlet-name>
          <url-pattern>/index</url-pattern>
      </servlet-mapping>
 
+	<servlet-mapping>
+         <servlet-name>buscar</servlet-name>
+         <url-pattern>/BuscarTrabalhador</url-pattern>
+     </servlet-mapping>
+	
 </web-app>
