@@ -87,18 +87,18 @@ public class Conexao {
 		String url = "jdbc:mysql://server12mysql.mysql.database.azure.com:3306/apsjava";
 		ArrayList<Trabalhador> trabalhador = null;
 		Connection conn = null;
+		Trabalhador pessoa = null;
 		
-		String comando = "SELECT * FROM Trabalhadores WHERE nome = %"+nome+"%;";
+		String comando = "SELECT * FROM Trabalhadores WHERE nome LIKE '%"+nome+"%';";
 		try{
-			//conn2 = DriverManager.getConnection(url, "Kaue", "Bontlindo12/");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			conn = DriverManager.getConnection(url, "Kaue", "Bontlindo12/");
-			System.out.println("Conectado");
 			PreparedStatement pesquisa = conn.prepareStatement(comando);
 			ResultSet resultado = pesquisa.executeQuery();
 			if(resultado != null){
 				trabalhador = new ArrayList<Trabalhador>();
 				while(resultado.next()) {
-					Trabalhador pessoa = new Trabalhador();
+					pessoa = new Trabalhador();
 					pessoa.setId(resultado.getInt("id"));
 					pessoa.setNome(resultado.getString("nome"));
 					pessoa.setSobrenome(resultado.getString("sobrenome"));
@@ -109,12 +109,12 @@ public class Conexao {
 					pessoa.setUf(resultado.getString("uf"));
 					pessoa.setBairro(resultado.getString("bairro"));
 					pessoa.setLogradouro(resultado.getString("logradouro"));
-					//pessoa.add(pessoa);
+					trabalhador.add(pessoa);
 				}
 			}
 			
 		} catch (Exception e) {
-			System.out.println("Erro no arraylist");
+			System.out.println("Erro no arraylist"+ e.getMessage());
 		}
 		
 		

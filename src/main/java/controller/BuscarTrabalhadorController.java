@@ -34,7 +34,7 @@ public class BuscarTrabalhadorController extends HttpServlet {
 	     String nome = request.getParameter("nome");
 	     System.out.println(nome);
 	     ArrayList<Trabalhador> trabalhador;
-		trabalhador = new Trabalhador().buscaTabela(request.getParameter("nome"));
+		trabalhador = new Trabalhador().buscaTabela(nome);
 		for (Trabalhador pessoa : trabalhador) {
 			System.out.println("Test: " + pessoa.getNome());
 		}
