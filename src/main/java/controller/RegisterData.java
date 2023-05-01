@@ -80,32 +80,38 @@ import java.io.IOException;
 	        
 	        //Dispatcher
 	        
-	       String mensagem;
-	       mensagem = "Dados enviados com sucesso";
+	    /*   String mensagem;
+	       RequestDispatcher dispatcher = request.getRequestDispatcher("form.jsp");
+	       
 	     if(request.getParameter("nome") != null ) {
+			  mensagem = "Dados enviados com sucesso";
 	    	  request.setAttribute("mensagem", mensagem);
-		      RequestDispatcher dispatcher = request.getRequestDispatcher("form.jsp");
 		      dispatcher.forward(request, response);
 		       
 	     } else {
 	         mensagem = "Os campos precisam ser preenchidos!";
 	    	 request.setAttribute("mensagem", mensagem);
-		     RequestDispatcher dispatcher = request.getRequestDispatcher("form.jsp");
+		     dispatcher.forward(request, response);
+	     } */
+	     
+	     String mensagem;
+	       RequestDispatcher dispatcher = request.getRequestDispatcher("form.jsp");
+	       
+	     if(teste.conectar() == true) {
+			  mensagem = "Dados enviados com sucesso";
+	    	  request.setAttribute("mensagem", mensagem);
+		      dispatcher.forward(request, response);
+		       
+	     } else {
+	         mensagem = "Erro de conexão com o banco de dados, tente novamente";
+	    	 request.setAttribute("mensagem", mensagem);
 		     dispatcher.forward(request, response);
 	     }
+	     
+	     
 	    }
 	    
-//	     public void conectar() {
-//	     	
-//	    	 String url = "jdbc:mysql://server12mysql.mysql.database.azure.com:3306/apsjava";
-//	         try {
-//	        	 Class.forName("com.mysql.jdbc.Driver");
-//	             Connection conn = DriverManager.getConnection(url, "Kaue", "Bontlindo12/");
-//	             System.out.println("Conectado azure");
-//	         }catch (Exception e) {
-//	             System.out.println("Erro");
-//	         }
-	     	
+
 
 	       
 	      

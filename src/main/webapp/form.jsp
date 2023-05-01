@@ -34,7 +34,7 @@
                         <div class="item text-sm font-medium leading-3 cursor-pointer hover:text-green-600 duration-500 text-black">
                             <a href="./index.html">Inicio</a></div>
                         <div class="item text-sm font-medium leading-3 cursor-pointer hover:text-green-600 duration-500 text-text-black">
-                            <a href="./table.html">Tabela</a></div>
+                            <a href="./table.jsp">Tabela</a></div>
                         <div class="item text-sm font-medium leading-3 cursor-pointer hover:text-green-600 duration-500 text-text-black">
                             <a href="./graphic.html">Gráfico</a></div>
                         <div class="item mx-auto text-center py-6 text-sm font-medium leading-3 cursor-pointer hover:text-green-600 duration-500 text-black">

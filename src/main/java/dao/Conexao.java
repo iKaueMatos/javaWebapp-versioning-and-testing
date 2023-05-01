@@ -4,22 +4,32 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.Iterator;
+import java.util.ArrayList;
 import model.Trabalhador;
 
 public class Conexao {
+	
 	String url = "jdbc:mysql://server12mysql.mysql.database.azure.com:3306/apsjava";
-	public void conectar() {
+	public boolean conectar() {
 
-		 
 	       try {
 	    	   Class.forName("com.mysql.cj.jdbc.Driver");
 	           Connection conn = DriverManager.getConnection(url, "Kaue", "Bontlindo12/");
 	           System.out.println("Conectado ao banco de dados com sucesso");
+	           boolean conectado = true;
+	           return conectado;
+	     
 	       }catch (Exception e) {
-	           System.out.println("Erro");
+	           System.out.println("Erro - Banco de dados Offline");
+	           boolean conectado = false;
+	           return conectado;
 	       }
-	   }
-	
+	      }
+
+		
 	public void insert(Trabalhador trabalhador) {
 		String nome = trabalhador.getNome();
 		String sobrenome = trabalhador.getSobrenome();
@@ -54,6 +64,7 @@ public class Conexao {
 			ResultSet resultado = pesquisa.executeQuery();
 			while (resultado.next()) {
 				numero++;
+				int id = resultado.getInt("id");
 				String nome = resultado.getString("nome");
 				String sobrenome = resultado.getString("sobrenome");
 				String localidade = resultado.getString("localidade");
@@ -63,7 +74,7 @@ public class Conexao {
 				String uf = resultado.getString("uf");
 				String bairro = resultado.getString("bairro");
 				String logradouro = resultado.getString("logradouro");
-				System.out.println("\nNome: "+nome+"\nSobrenome: "+sobrenome+"\nLocalidade: "+localidade+"\nTelefone: "+telefone+"\nIdade: "+idade+"\nCEP: "+cep+"\nUF: "+uf+"\nBairro: "+bairro+"\nLogradouro: "+logradouro);
+				System.out.println("\nID: "+id+"\nNome: "+nome+"\nSobrenome: "+sobrenome+"\nLocalidade: "+localidade+"\nTelefone: "+telefone+"\nIdade: "+idade+"\nCEP: "+cep+"\nUF: "+uf+"\nBairro: "+bairro+"\nLogradouro: "+logradouro);
 			}
 			System.out.println(numero + " resultados encontrados.");
 			conn.close();
@@ -72,7 +83,59 @@ public class Conexao {
 		}
 	}
 	
-	
+	public ArrayList<Trabalhador> buscaTabela(String nome){
+		String url = "jdbc:mysql://server12mysql.mysql.database.azure.com:3306/apsjava";
+		ArrayList<Trabalhador> trabalhador = null;
+		Connection conn = null;
+		
+		String comando = "SELECT * FROM Trabalhadores WHERE nome = %"+nome+"%;";
+		try{
+			//conn2 = DriverManager.getConnection(url, "Kaue", "Bontlindo12/");
+			conn = DriverManager.getConnection(url, "Kaue", "Bontlindo12/");
+			System.out.println("Conectado");
+			PreparedStatement pesquisa = conn.prepareStatement(comando);
+			ResultSet resultado = pesquisa.executeQuery();
+			if(resultado != null){
+				trabalhador = new ArrayList<Trabalhador>();
+				while(resultado.next()) {
+					Trabalhador pessoa = new Trabalhador();
+					pessoa.setId(resultado.getInt("id"));
+					pessoa.setNome(resultado.getString("nome"));
+					pessoa.setSobrenome(resultado.getString("sobrenome"));
+					pessoa.setLocalidade(resultado.getString("localidade"));
+					pessoa.setTelefone(resultado.getString("telefone"));
+					pessoa.setIdade(resultado.getString("idade"));
+					pessoa.setCep(resultado.getString("cep"));
+					pessoa.setUf(resultado.getString("uf"));
+					pessoa.setBairro(resultado.getString("bairro"));
+					pessoa.setLogradouro(resultado.getString("logradouro"));
+					//pessoa.add(pessoa);
+				}
+			}
+			
+		} catch (Exception e) {
+			System.out.println("Erro no arraylist");
+		}
+		
+		
+//		finally{
+//			try{
+//				if(pesquisa != null)
+//					pesquisa.close();
+//				} catch(Exception e2){
+//					e2.printStackTrace();
+//				}
+//				
+//				try{
+//					if(conn2 != null)
+//					conn2.close();
+//				} catch (Exception e2){
+//					e2.printStackTrace();
+//				}
+//			}
+		 
+		return trabalhador;
+	}
 	
 	
 	

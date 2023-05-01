@@ -8,13 +8,20 @@ xmlns="http://xmlns.jcp.org/xml/ns/javaee"
      <servlet-class>controller.RegisterData</servlet-class>
       </servlet>
 
+	<servlet>
+	<servlet-name>buscar</servlet-name>
+	<servlet-class>controller.BuscarTrabalhadorController</servlet-class>
+	</servlet>
 
      <servlet-mapping>
          <servlet-name>register</servlet-name>
          <url-pattern>/index</url-pattern>
      </servlet-mapping>
 
-
+	<servlet-mapping>
+         <servlet-name>buscar</servlet-name>
+         <url-pattern>/BuscarTrabalhador</url-pattern>
+     </servlet-mapping>
 	
 
 </web-app>

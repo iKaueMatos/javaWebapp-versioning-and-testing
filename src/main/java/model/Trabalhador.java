@@ -2,11 +2,14 @@ package model;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 import controller.Validacao;
 import dao.Conexao;
 
 public class Trabalhador extends Conexao {
+	private Integer id;
 	private String nome;
 	private String sobrenome;
 	private String localidade;
@@ -17,6 +20,10 @@ public class Trabalhador extends Conexao {
 	private String logradouro;
 	private String bairro;
 	
+	
+	public Trabalhador() {
+		
+	}
 	
 	 public Trabalhador(String nome, String sobrenome ,String localidade, String telefone,
 			 String idade, String cep, String uf, String logradouro, String bairro){
@@ -30,8 +37,6 @@ public class Trabalhador extends Conexao {
 		setLogradouro(logradouro);
 		setBairro(bairro);
 	}
-	 
-
 	
 	public String getNome() {
 		return nome;
@@ -105,5 +110,15 @@ public class Trabalhador extends Conexao {
 		this.cep = cep;
 	}
 	
+	public void setId(Integer id){
+		this.id = id;
+	}
 	
+	public Integer getId(Integer id){
+		return id;
+	}
+	
+	public ArrayList<Trabalhador> buscaTabela(String nome){
+		return new Conexao().buscaTabela(nome);
+	}
 }

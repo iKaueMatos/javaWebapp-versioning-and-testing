@@ -38,4 +38,17 @@ public class Validacao {
 		
 	}
 	
+	
+	/*public static boolean verificacao(){
+		boolean dadosCorretos = true;
+		if (Validacao.validaNumerico(telefone) = "0" || Validacao.validaNumerico(idade) = "0" || Validacao.validaNumerico(cep) = "0" ){
+		
+		}
+		
+		
+		
+		return dadosCorretos;
+		
+	}*/
+	
 }
