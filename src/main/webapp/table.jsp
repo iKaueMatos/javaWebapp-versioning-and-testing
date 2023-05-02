@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ page import="java.util.List" %>
+<%@ page import="model.Trabalhador" %>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -50,20 +52,27 @@
 				</thead>
 				<tbody>
 					<tr class="table-active">
-						<td>Dados</td>
-						<td>Dados</td>
-						<td>dados</td>
-						<td>Dados</td>
-						<td>Dados</td>
-						<td>dados</td>
-						<td>Dados</td>
-						<td>Dados</td>
-						<td>Dados</td>
+						<% 
+						if(request.getAttribute("trabalhador") != null){
+							List<?> trabalhador = (List<?>) request.getAttribute("trabalhador");
+							for(int contador = 0; contador <= (trabalhador.size() - 1); contador++){
+								Trabalhador pessoa = (Trabalhador) trabalhador.get(contador);
+						%>
+						<td><%out.print(pessoa.getNome()); %></td>
+						<td><%out.print(pessoa.getSobrenome()); %></td>
+						<td><%out.print(pessoa.getIdade()); %></td>
+						<td><%out.print(pessoa.getTelefone()); %></td>
+						<td><%out.print(pessoa.getCep()); %></td>
+						<td><%out.print(pessoa.getLocalidade()); %></td>
+						<td><%out.print(pessoa.getUf()); %></td>
+						<td><%out.print(pessoa.getBairro()); %></td>
+						<td><%out.print(pessoa.getLogradouro()); %></td>
 						<td><a class="link-edit" href="">Editar</a>
 						<a class="link-edit" href="">Deletar</a>	
 						</td>
 					</tr>
 				</tbody>
+				<% }} %>
 			</table>
 		</div>
 	</div>

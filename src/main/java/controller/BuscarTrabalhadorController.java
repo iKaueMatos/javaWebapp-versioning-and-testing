@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -34,10 +35,14 @@ public class BuscarTrabalhadorController extends HttpServlet {
 	     String nome = request.getParameter("nome");
 	     System.out.println(nome);
 	     ArrayList<Trabalhador> trabalhador;
-		trabalhador = new Trabalhador().buscaTabela(nome);
-		for (Trabalhador pessoa : trabalhador) {
-			System.out.println("Test: " + pessoa.getNome());
-		}
+		 trabalhador = new Trabalhador().buscaTabela(nome);
+		 request.setAttribute("trabalhador", trabalhador);
+		 RequestDispatcher dispatcher = request.getRequestDispatcher("table.jsp");
+		dispatcher.forward(request, response);
+		
+//		for (Trabalhador pessoa : trabalhador) {
+//			System.out.println("Test: " + pessoa.getNome());
+//		}
 	     
 	     
 		

@@ -122,7 +122,7 @@
             <div class="line w-full h-[1px] absolute left-0 opacity-20 md-[6px] bg-[#000]"></div>
             <div class="bottom flex justify-center gap-5 md:justify-between flex-wrap px-[5%] py-[26px]">
                 <div class="left">
-                    2023 Agricultura organnica - Todos os direitos reservados.
+                    2023 Agricultura organica - Todos os direitos reservados.
                 </div>
         </footer>
         <!--The end footer-->
@@ -130,6 +130,7 @@
         <!--The end-->
 
         <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+        <script src="./js/jquery.mask.js"></script>
         <script src="./js/Api.js"></script>
 
         <script src="./js/main.js"></script>

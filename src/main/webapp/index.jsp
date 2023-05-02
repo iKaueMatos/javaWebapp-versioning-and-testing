@@ -35,7 +35,7 @@
                         <div class="item text-sm font-medium leading-3 cursor-pointer hover:text-green-600 duration-500 text-text-black">
                             <a href="#Contato">Contato</a></div>
                         <!-- menu-btn -->
-                        <div class="item btn py-3 px-6 text-sm font-medium leading-3 rounded-md text-black cursor-pointer  duration-600 hover:text-green-600"> <a href="./form.html">Cadastre seus produtos</a>
+                        <div class="item btn py-3 px-6 text-sm font-medium leading-3 rounded-md text-black cursor-pointer  duration-600 hover:text-green-600"> <a href="./form.jsp">Cadastre seus produtos</a>
                         </div>
                     </div>
                     <!-- in mobile phones -->
