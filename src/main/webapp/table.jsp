@@ -38,6 +38,7 @@
 			<table class="table table-responsive outline-green-600 shadow-md">
 				<thead class="table-dark">
 					<tr class="table-tr">
+						<th class="hidden" scope="col">Id</th>
 						<th scope="col">Nome</th>
 						<th scope="col">Sobrenome</th>
 						<th scope="col">Idade</th>
@@ -53,23 +54,34 @@
 				<tbody>
 					<tr class="table-active">
 						<% 
+						String mensagem = (String) request.getAttribute("mensagem");
+						if(mensagem != null){
+							out.print(mensagem);
+						}
+						%>
+						<% 
 						if(request.getAttribute("trabalhador") != null){
 							List<?> trabalhador = (List<?>) request.getAttribute("trabalhador");
 							for(int contador = 0; contador <= (trabalhador.size() - 1); contador++){
 								Trabalhador pessoa = (Trabalhador) trabalhador.get(contador);
 						%>
-						<td><%out.print(pessoa.getNome()); %></td>
-						<td><%out.print(pessoa.getSobrenome()); %></td>
-						<td><%out.print(pessoa.getIdade()); %></td>
-						<td><%out.print(pessoa.getTelefone()); %></td>
-						<td><%out.print(pessoa.getCep()); %></td>
-						<td><%out.print(pessoa.getLocalidade()); %></td>
-						<td><%out.print(pessoa.getUf()); %></td>
-						<td><%out.print(pessoa.getBairro()); %></td>
-						<td><%out.print(pessoa.getLogradouro()); %></td>
-						<td><a class="link-edit" href="">Editar</a>
-						<a class="link-edit" href="">Deletar</a>	
-						</td>
+						<form action="ModificarTrabalhadores" method="post" accept-charset="UTF-8" >
+							<input type="hidden" name="id" value="<%out.print(pessoa.getId());%>">
+							<td><%out.print(pessoa.getNome()); %></td>
+							<td><%out.print(pessoa.getSobrenome()); %></td>
+							<td><%out.print(pessoa.getIdade()); %></td>
+							<td><%out.print(pessoa.getTelefone()); %></td>
+							<td><%out.print(pessoa.getCep()); %></td>
+							<td><%out.print(pessoa.getLocalidade()); %></td>
+							<td><%out.print(pessoa.getUf()); %></td>
+							<td><%out.print(pessoa.getBairro()); %></td>
+							<td><%out.print(pessoa.getLogradouro()); %></td>
+							<td>
+        						<button type="submit" name="editar" id="btn" class="bg-green-500 w-20 h-10 cursor-pointer text-white rounded-md hover:bg-green-600 hover:outline outline-2 outline-green-600 outline-offset-2 text-sm">Editar</button>
+        						<button type="submit" name="apagar" id="btn" class="bg-green-500 w-20 h-10 cursor-pointer text-white rounded-md hover:bg-green-600 hover:outline outline-2 outline-green-600 outline-offset-2 text-sm">Excluir</button>
+							</td>
+						</form>	
+						
 					</tr>
 				</tbody>
 				<% }} %>

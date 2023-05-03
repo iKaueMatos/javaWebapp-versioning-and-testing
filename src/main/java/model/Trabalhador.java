@@ -114,8 +114,17 @@ public class Trabalhador extends Conexao {
 		this.id = id;
 	}
 	
-	public Integer getId(Integer id){
+	public Integer getId(){
 		return id;
+	}
+	
+	
+	public Trabalhador buscarProdutoPorId(int id) {
+		return new Conexao().BuscarTrabalhadorPorID(id);
+	}
+	
+	public void excluir(int id){
+		new Conexao().ExcluirTrabalhador(id);
 	}
 	
 	public ArrayList<Trabalhador> buscaTabela(String nome){

@@ -13,6 +13,11 @@ xmlns="http://xmlns.jcp.org/xml/ns/javaee"
 	<servlet-class>controller.BuscarTrabalhadorController</servlet-class>
 	</servlet>
 
+	<servlet>
+	<servlet-name>modificar</servlet-name>
+	<servlet-class>controller.ModificarTrabalhadoresController</servlet-class>
+	</servlet>
+	
      <servlet-mapping>
          <servlet-name>register</servlet-name>
          <url-pattern>/index</url-pattern>
@@ -21,6 +26,11 @@ xmlns="http://xmlns.jcp.org/xml/ns/javaee"
 	<servlet-mapping>
          <servlet-name>buscar</servlet-name>
          <url-pattern>/BuscarTrabalhador</url-pattern>
+     </servlet-mapping>
+     
+     <servlet-mapping>
+         <servlet-name>modificar</servlet-name>
+         <url-pattern>/ModificarTrabalhadores</url-pattern>
      </servlet-mapping>
 	
 

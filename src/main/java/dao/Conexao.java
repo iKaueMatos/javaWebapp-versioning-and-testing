@@ -94,6 +94,7 @@ public class Conexao {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			conn = DriverManager.getConnection(url, "Kaue", "Bontlindo12/");
 			PreparedStatement pesquisa = conn.prepareStatement(comando);
+
 			ResultSet resultado = pesquisa.executeQuery();
 			if(resultado != null){
 				trabalhador = new ArrayList<Trabalhador>();
@@ -111,6 +112,7 @@ public class Conexao {
 					pessoa.setLogradouro(resultado.getString("logradouro"));
 					trabalhador.add(pessoa);
 				}
+			conn.close();
 			}
 			
 		} catch (Exception e) {
@@ -136,6 +138,100 @@ public class Conexao {
 		 
 		return trabalhador;
 	}
+	
+	public void ExcluirTrabalhador(int id){
+		String sql = "DELETE FROM Trabalhadores WHERE id = ?";
+		PreparedStatement pesquisa2 = null;
+		Connection conn = null;
+		
+		try {
+			conn = DriverManager.getConnection(url, "Kaue", "Bontlindo12/");
+			System.out.println("Conectado excluir");
+			pesquisa2 = conn.prepareStatement(sql);
+			pesquisa2.setInt(1, id);
+			pesquisa2.executeUpdate();
+			conn.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public Trabalhador BuscarTrabalhadorPorID(int id){
+		String url = "jdbc:mysql://server12mysql.mysql.database.azure.com:3306/apsjava";
+		PreparedStatement pesquisa = null;
+		String comando = "SELECT * FROM Trabalhadores WHERE id =" + id ;
+		ResultSet rs = null;
+		Connection conn = null;
+		Trabalhador pessoa = null;
+		
+		try {
+			conn = DriverManager.getConnection(url, "Kaue", "Bontlindo12/");
+			pesquisa = conn.prepareStatement(comando);
+			rs = pesquisa.executeQuery();
+			if (rs != null && rs.next()) {
+				pessoa = new Trabalhador();
+					pessoa.setId(rs.getInt("id"));
+					pessoa.setNome(rs.getString("nome"));
+					pessoa.setSobrenome(rs.getString("sobrenome"));
+					pessoa.setLocalidade(rs.getString("localidade"));
+					pessoa.setTelefone(rs.getString("telefone"));
+					pessoa.setIdade(rs.getString("idade"));
+					pessoa.setCep(rs.getString("cep"));
+					pessoa.setUf(rs.getString("uf"));
+					pessoa.setBairro(rs.getString("bairro"));
+					pessoa.setLogradouro(rs.getString("logradouro"));
+				
+			}
+		} catch (Exception e) {
+			e.printStackTrace();	
+  		} finally {
+			  try {
+				if (pesquisa != null){
+					pesquisa.close();
+				}
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+			try {
+				if (conn != null){
+					conn.close();
+				}
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+			  
+		  }
+		
+		return pessoa;
+	}
+
+	
+	
+	
+	public void AlterarTrabalhador(Trabalhador tr) {
+		String comando = "UPDATE Trabalhadores SET nome = '"+tr.getNome()+"', sobrenome = '"+tr.getSobrenome()+"', localidade = '"+tr.getLocalidade()+"', telefone = '"+tr.getTelefone()+"', idade = '"+tr.getIdade()+"', cep = '"+tr.getCep()+"', logradouro = '"+tr.getLogradouro()+", bairro = '"+tr.getBairro()+"', uf = '"+tr.getUf()+"' WHERE id = "+tr.getId()+";";
+		try {
+			Connection conn = DriverManager.getConnection(url, "Kaue", "Bontlindo12/");
+			PreparedStatement pesquisa = conn.prepareStatement(comando);
+			pesquisa.executeUpdate();
+			conn.close();
+		} catch (Exception e) {
+			e.printStackTrace();		
+		} 
+		//finally{
+//			try{
+//				if(pesquisa != null)
+//					pesquisa.close();
+//				} catch(Exception e2){
+//					e2.printStackTrace();
+//				}
+		
+	}
+	
+	
+	
+	
+	
 	
 	
 	
