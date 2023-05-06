@@ -18,6 +18,11 @@ xmlns="http://xmlns.jcp.org/xml/ns/javaee"
 	<servlet-class>controller.ModificarTrabalhadoresController</servlet-class>
 	</servlet>
 	
+	<servlet>
+	<servlet-name>alterar</servlet-name>
+	<servlet-class>controller.AlteraTrabalhadorController</servlet-class>
+	</servlet>
+	
      <servlet-mapping>
          <servlet-name>register</servlet-name>
          <url-pattern>/index</url-pattern>
@@ -32,6 +37,11 @@ xmlns="http://xmlns.jcp.org/xml/ns/javaee"
          <servlet-name>modificar</servlet-name>
          <url-pattern>/ModificarTrabalhadores</url-pattern>
      </servlet-mapping>
-	
+	 
+	 <servlet-mapping>
+         <servlet-name>alterar</servlet-name>
+         <url-pattern>/AlteraTrabalhador</url-pattern>
+     </servlet-mapping>
+     
 
 </web-app>

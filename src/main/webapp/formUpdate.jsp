@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.List" %>
+<%@ page import="model.Trabalhador" %>
    
     <!DOCTYPE html>
     <html lang="pt-br">
@@ -32,7 +34,7 @@
                     <div class="right md:flex gap-8 items-center hidden ">
                         <!-- menu -->
                         <div class="item text-sm font-medium leading-3 cursor-pointer hover:text-green-600 duration-500 text-black">
-                            <a href="./index.html">Inicio</a></div>
+                            <a href="./index.jsp">Inicio</a></div>
                         <div class="item text-sm font-medium leading-3 cursor-pointer hover:text-green-600 duration-500 text-text-black">
                             <a href="./table.jsp">Tabela</a></div>
                         <div class="item text-sm font-medium leading-3 cursor-pointer hover:text-green-600 duration-500 text-text-black">
@@ -59,50 +61,59 @@
 
 
         <div class="flex justify-center items-center h-screen bg-white">
-            <div id="form" class="block bg-slate-50 p-6 rounded-xl shodow-md  w-90">
+            <div id="AlteraTrabalhador" class="block bg-slate-50 p-6 rounded-xl shodow-md  w-90">
                 <!--Formulario metodo de envio POST-->
-                <form action="index" method="post" accept-charset="UTF-8" >
+                <form action="AlteraTrabalhador" method="post" accept-charset="UTF-8" >
+                <%
+                Trabalhador pessoa = null;
+                if (request.getAttribute("pessoa") != null){
+                	pessoa = (Trabalhador) request.getAttribute("pessoa");
+                }  
+                %>         
+                	<div>
+                		<input value="<%out.print(pessoa.getId());%>" type="hidden" name="id">
+               	 	</div>
                     <h2 class="text-green-700 text-3xl font-semibold my-4">Registre-se</h2>
                     <!-- full name -->
                     <div class="flex flex-row">
                         <!--Nome -->
                         <div id="firstName" class="w-1/2 mr-1">
                             <label for="fname" class="text-sm">Nome</label><br>
-                            <input type="text" name="nome" id="nome" class="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-green-600 shadow-sm" >
+                            <input value="<%out.print(pessoa.getNome());%>" type="text" name="nome" id="nome" class="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-green-600 shadow-sm" >
                         </div>
                         <!-- Sobrenome-->
                         <div id="lastName" class="w-1/2 mr-1">
                             <label for="sobrenome" class="text-sm">Sobrenome</label><br>
-                            <input type="sobrenome" name="sobrenome" id="sobrenome" class="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-grenn-600 shadow-sm">
+                            <input value="<%out.print(pessoa.getSobrenome());%>" type="sobrenome" name="sobrenome" id="sobrenome" class="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-grenn-600 shadow-sm">
                         </div>
                     </div>
 
                     <!--Telefone-->
                     <label for="telefone" class="text-sm">Telefone</label><br>
-                    <input type="text" placeholder="11 9999-9999" name="telefone" id="telefone" class="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-green-600 shadow-sm">
+                    <input value="<%out.print(pessoa.getTelefone());%>" type="text" placeholder="11 9999-9999" name="telefone" id="telefone" class="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-green-600 shadow-sm">
 
                     <!--idade-->
                     <label for="idade" class="text-sm">Idade</label><br>
-                    <input type="text" name="idade" id="idade" class="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-green-600 shadow-sm">
+                    <input value="<%out.print(pessoa.getIdade());%>" value="<%out.print(pessoa.getId());%>" type="text" name="idade" id="idade" class="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-green-600 shadow-sm">
 
                     <!-- Informações CEP -->
                     <label for="cep" class="text-sm">CEP</label><br>
-                    <input type="text" placeholder="00000-07" name="cep" id="cep" class="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-green-600 shadow-sm">
+                    <input value="<%out.print(pessoa.getCep());%>" type="text" placeholder="00000-07" name="cep" id="cep" class="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-green-600 shadow-sm">
 
                     <!--Bairro-->
                     <label for="cidade" class="text-sm">Localidade</label><br>
-                    <input type="text" name="localidade" id="cidade" readonly class="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-green-600 shadow-sm">
+                    <input value="<%out.print(pessoa.getLocalidade());%>" type="text" name="localidade" id="cidade" readonly class="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-green-600 shadow-sm">
 
                     <label for="logradouro" class="text-sm">logradouro</label><br>
-                    <input type="text" name="logradouro" id="logradouro" readonly class="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-green-600 shadow-sm">
+                    <input value="<%out.print(pessoa.getLogradouro());%>" type="text" name="logradouro" id="logradouro" readonly class="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-green-600 shadow-sm">
                     <!--Estado-->
                     <label for="uf" class="text-sm">UF</label><br>
-                    <input type="text" name="uf" id="uf" readonly class="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-green-600 shadow-sm">
+                    <input value="<%out.print(pessoa.getUf());%>" type="text" name="uf" id="uf" readonly class="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-green-600 shadow-sm">
 
                     <label for="bairro" class="text-sm">Bairro</label><br>
-                    <input type="text" name="bairro" id="bairro" readonly class="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-green-600 shadow-sm">
+                    <input value="<%out.print(pessoa.getBairro());%>" type="text" name="bairro" id="bairro" readonly class="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-green-600 shadow-sm">
                     <!--button -->
-                    <button type="submit" name="button" id="btn" class="bg-green-500 w-full h-10 cursor-pointer text-white rounded-md hover:bg-green-600 hover:outline outline-2 outline-green-600 outline-offset-2 text-sm">Enviar</button>
+                    <button type="submit" name="button" id="btn" class="bg-green-500 w-full h-10 cursor-pointer text-white rounded-md hover:bg-green-600 hover:outline outline-2 outline-green-600 outline-offset-2 text-sm">Enviar alterações</button>
                     <div> 
                         <%
                         String mensagem = (String) request.getAttribute("mensagem");

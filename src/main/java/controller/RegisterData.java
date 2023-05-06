@@ -72,11 +72,11 @@ import java.io.IOException;
 	       
 	        
 
-	        Trabalhador teste = new Trabalhador(decodedNome, decodedSobrenome, decodedLocalidade, telefone,
+	        Trabalhador trab = new Trabalhador(decodedNome, decodedSobrenome, decodedLocalidade, telefone,
 	        		idade, cep, uf, decodedLogradouro, decodedBairro);
-	        teste.conectar();
-	        teste.insert(teste);
-	        teste.select();
+	        trab.conectar();
+	        trab.insert(trab);
+	        trab.select();
 	        
 	        //Dispatcher
 	        
@@ -97,7 +97,7 @@ import java.io.IOException;
 	     String mensagem;
 	       RequestDispatcher dispatcher = request.getRequestDispatcher("form.jsp");
 	       
-	     if(teste.conectar() == true) {
+	     if(trab.conectar() == true) {
 			  mensagem = "Dados enviados com sucesso";
 	    	  request.setAttribute("mensagem", mensagem);
 		      dispatcher.forward(request, response);

@@ -48,7 +48,10 @@ public class ModificarTrabalhadoresController extends HttpServlet {
 			 request.setAttribute("mensagem", "Trabalhador apagado com sucesso!");
 			 rd.forward(request, response);
 		 } else if (editar != null && id != null) {
-			 Trabalhador pessoa = new Trabalhador().buscarProdutoPorId(Integer.valueOf(id));
+			 Trabalhador pessoa = new Trabalhador().buscarProdutoPorId(Integer.valueOf(id));        
+			 RequestDispatcher dispacher = request.getRequestDispatcher("formUpdate.jsp");
+			 request.setAttribute("pessoa", pessoa);
+			 dispacher.forward(request, response);
 		 }
 	     
 	}

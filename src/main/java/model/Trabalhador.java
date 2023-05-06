@@ -127,6 +127,10 @@ public class Trabalhador extends Conexao {
 		new Conexao().ExcluirTrabalhador(id);
 	}
 	
+	public void alterar() {
+		new Conexao().AlterarTrabalhador(this);
+	}
+	
 	public ArrayList<Trabalhador> buscaTabela(String nome){
 		return new Conexao().buscaTabela(nome);
 	}

@@ -28,7 +28,7 @@
 	<a class="toBack1" href="./index.jsp">Ver grafico</a>
 	<a class="toBack2" href="./index.jsp">Gerar relatório</a>
 
-	<div class="container mt-5">
+	<div class="container mt-6">
 	 <form action="BuscarTrabalhador" method="post" accept-charset="UTF-8" >
 		<input type="text" placeholder="Digite seu nome" name="nome" id="nome"  class="h-10 w-3000 rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-green-600 shadow-md">
         <button type="submit" name="button" id="btn" class="bg-green-500 w-20 h-10 cursor-pointer text-white rounded-md hover:bg-green-600 hover:outline outline-2 outline-green-600 outline-offset-2 text-sm">Buscar</button>
@@ -38,7 +38,7 @@
 			<table class="table table-responsive outline-green-600 shadow-md">
 				<thead class="table-dark">
 					<tr class="table-tr">
-						<th class="hidden" scope="col">Id</th>
+						<th scope="col">Id</th>
 						<th scope="col">Nome</th>
 						<th scope="col">Sobrenome</th>
 						<th scope="col">Idade</th>
@@ -67,6 +67,7 @@
 						%>
 						<form action="ModificarTrabalhadores" method="post" accept-charset="UTF-8" >
 							<input type="hidden" name="id" value="<%out.print(pessoa.getId());%>">
+							<td><%out.print(pessoa.getId()); %></td>
 							<td><%out.print(pessoa.getNome()); %></td>
 							<td><%out.print(pessoa.getSobrenome()); %></td>
 							<td><%out.print(pessoa.getIdade()); %></td>

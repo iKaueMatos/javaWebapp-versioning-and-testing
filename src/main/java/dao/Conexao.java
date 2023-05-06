@@ -209,9 +209,13 @@ public class Conexao {
 	
 	
 	public void AlterarTrabalhador(Trabalhador tr) {
-		String comando = "UPDATE Trabalhadores SET nome = '"+tr.getNome()+"', sobrenome = '"+tr.getSobrenome()+"', localidade = '"+tr.getLocalidade()+"', telefone = '"+tr.getTelefone()+"', idade = '"+tr.getIdade()+"', cep = '"+tr.getCep()+"', logradouro = '"+tr.getLogradouro()+", bairro = '"+tr.getBairro()+"', uf = '"+tr.getUf()+"' WHERE id = "+tr.getId()+";";
+        System.out.println("entrou no metodo ok");
+
+		String comando = "UPDATE Trabalhadores SET nome = '"+tr.getNome()+"', sobrenome = '"+tr.getSobrenome()+"', localidade = '"+tr.getLocalidade()+"', telefone = '"+tr.getTelefone()+"', idade = '"+tr.getIdade()+"', cep = '"+tr.getCep()+"', logradouro = '"+tr.getLogradouro()+"', bairro = '"+tr.getBairro()+"', uf = '"+tr.getUf()+"' WHERE id = "+tr.getId()+";";
 		try {
 			Connection conn = DriverManager.getConnection(url, "Kaue", "Bontlindo12/");
+	        System.out.println("conectou ok");
+
 			PreparedStatement pesquisa = conn.prepareStatement(comando);
 			pesquisa.executeUpdate();
 			conn.close();
